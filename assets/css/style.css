@@ -281,12 +281,12 @@ h3 {
 }
 
 h1 {
-    font-size: clamp(42px, 6vw, 76px);
+    font-size: clamp(40px, 5.2vw, 66px);
     max-width: 850px
 }
 
 h2 {
-    font-size: clamp(30px, 4vw, 46px)
+    font-size: clamp(29px, 3.5vw, 42px)
 }
 
 h3 {
@@ -333,7 +333,10 @@ h3 {
 
 .visual {
     position: relative;
-    min-height: 430px
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .orb {
@@ -360,7 +363,10 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    align-content: center
+    align-content: center;
+    justify-content: center;
+    justify-items: stretch;
+    margin: 0 auto;
 }
 
 .node {
@@ -948,7 +954,8 @@ h3 {
     }
 
     .architecture {
-        inset: 35px 25px
+        inset: 35px 25px;
+        margin: 0 auto;
     }
 
     .nav-inner {
