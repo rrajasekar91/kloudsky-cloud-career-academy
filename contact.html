@@ -72,7 +72,62 @@
     .footer .footer-grid{grid-template-columns:1fr;}
     .footer .footer-grid > div:first-child{grid-column:auto;}
 }
-</style></head>
+</style>
+<style id="contact-compact-final">
+.contact-page .program-layout{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:24px;
+    align-items:start;
+}
+.contact-page .program-layout > div:first-child{
+    display:grid;
+    gap:16px;
+    align-content:start;
+}
+.contact-page .program-layout > .card{
+    align-self:start;
+}
+.contact-page .program-layout .form{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px 14px;
+}
+.contact-page .program-layout .form .field{
+    min-width:0;
+}
+.contact-page .program-layout .form .field:nth-of-type(9),
+.contact-page .program-layout .form button,
+.contact-page .program-layout .form .success,
+.contact-page .program-layout .form .error,
+.contact-page .program-layout .form .notice{
+    grid-column:1 / -1;
+}
+.contact-page .program-layout .form button{
+    justify-self:start;
+    margin-top:2px;
+}
+.contact-page .program-layout .form textarea{
+    min-height:105px;
+}
+@media(max-width:900px){
+    .contact-page .program-layout{
+        grid-template-columns:1fr;
+    }
+}
+@media(max-width:620px){
+    .contact-page .program-layout .form{
+        grid-template-columns:1fr;
+    }
+    .contact-page .program-layout .form .field:nth-of-type(9),
+    .contact-page .program-layout .form button,
+    .contact-page .program-layout .form .success,
+    .contact-page .program-layout .form .error,
+    .contact-page .program-layout .form .notice{
+        grid-column:auto;
+    }
+}
+</style>
+</head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header class="nav">
 <div class="container nav-inner">
@@ -95,7 +150,7 @@
 </nav>
 </div>
 </header>
-<main id="main">
+<main id="main" class="contact-page">
 <section class="page-hero">
 <div class="container">
 <h1>Start Your Cloud Career<br/><span style="color:#66c4ff">Journey.</span></h1>
@@ -120,7 +175,7 @@
 </div>
 </div>
 <div class="card">
-<form class="form" onsubmit="event.preventDefault();submitKloudSkyForm(this,'enquiry')">
+<form class="form" onsubmit="event.preventDefault();submitKloudSkyForm(this,'enquiry')"><input type="hidden" name="action" value="enquiry"/>
 <div class="field"><label>Full Name *</label><input name="name" required=""/></div>
 <div class="field"><label>Email *</label><input name="email" required="" type="email"/></div>
 <div class="field"><label>Phone / WhatsApp *</label><input name="phone" required=""/></div>
