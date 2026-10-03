@@ -72,7 +72,42 @@
     .footer .footer-grid{grid-template-columns:1fr;}
     .footer .footer-grid > div:first-child{grid-column:auto;}
 }
-</style></head>
+</style>
+<style id="hero-cloud-career-journey">
+.hero .hero-grid{align-items:center;}
+.hero .visual{min-height:520px;display:flex;align-items:center;justify-content:center;position:relative;}
+.hero .cloud-journey{position:relative;width:100%;max-width:700px;min-height:500px;padding:30px 22px 22px;border:1px solid rgba(73,181,255,.28);border-radius:42px;background:radial-gradient(circle at 50% 25%,rgba(39,146,255,.18),transparent 42%),linear-gradient(145deg,rgba(16,45,72,.92),rgba(7,24,43,.94));box-shadow:0 0 70px rgba(0,145,255,.12),inset 0 0 45px rgba(58,169,255,.05);overflow:hidden;}
+.hero .cloud-journey:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(102,196,255,.22) 1px,transparent 1px);background-size:18px 18px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 75%);opacity:.45;pointer-events:none;}
+.hero .journey-platforms{position:relative;display:flex;justify-content:space-between;align-items:center;gap:18px;margin:0 auto 24px;max-width:580px;}
+.hero .journey-platform{width:92px;height:78px;border:1px solid rgba(71,185,255,.65);border-radius:16px;background:rgba(7,24,43,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(34,157,255,.14);font-weight:800;color:#f4f8fc;}
+.hero .journey-platform span{font-size:11px;color:#9fc7e8;margin-top:5px;letter-spacing:.4px;}
+.hero .journey-cloud{position:relative;margin:0 auto 30px;max-width:440px;padding:25px 28px;border:1px solid #31b8ff;border-radius:70px;background:radial-gradient(circle at 50% 35%,rgba(44,173,255,.25),rgba(10,43,73,.92));box-shadow:0 0 32px rgba(20,172,255,.22),inset 0 0 30px rgba(68,196,255,.08);text-align:center;}
+.hero .journey-cloud:before,.hero .journey-cloud:after{content:"";position:absolute;border:1px solid rgba(47,185,255,.6);border-radius:50%;background:rgba(13,55,91,.92);z-index:-1;}
+.hero .journey-cloud:before{width:70px;height:70px;left:52px;bottom:-14px;}
+.hero .journey-cloud:after{width:92px;height:92px;right:52px;bottom:-18px;}
+.hero .journey-cloud strong{display:block;font-size:24px;color:#f4f8fc;}
+.hero .journey-cloud strong span{color:#4fc2ff;}
+.hero .journey-cloud small{display:block;margin-top:8px;color:#a9c8df;font-size:13px;letter-spacing:.8px;}
+.hero .journey-path{position:absolute;left:50%;top:116px;bottom:55px;width:2px;background:linear-gradient(#39c4ff,rgba(57,196,255,.08));opacity:.7;transform:translateX(-50%);}
+.hero .journey-cards{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 auto;max-width:620px;}
+.hero .journey-card{position:relative;min-height:178px;padding:20px 16px;border:1px solid rgba(71,185,255,.48);border-radius:20px;background:linear-gradient(160deg,rgba(15,52,84,.94),rgba(7,25,44,.94));box-shadow:0 12px 28px rgba(0,0,0,.2);text-align:center;}
+.hero .journey-card:before{content:"";position:absolute;top:-15px;left:50%;width:9px;height:9px;border:2px solid #4cc6ff;border-radius:50%;background:#08213a;box-shadow:0 0 14px #28b8ff;transform:translateX(-50%);}
+.hero .journey-card:nth-child(1){border-color:rgba(67,170,255,.48);}
+.hero .journey-card:nth-child(2){border-color:rgba(34,197,255,.72);}
+.hero .journey-card:nth-child(3){border-color:rgba(166,111,255,.62);}
+.hero .journey-icon{width:46px;height:46px;margin:0 auto 12px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid #49c5ff;color:#c9f0ff;font-size:20px;background:rgba(21,102,158,.3);box-shadow:0 0 20px rgba(52,190,255,.22);}
+.hero .journey-card:nth-child(3) .journey-icon{border-color:#ad76ff;box-shadow:0 0 20px rgba(173,118,255,.22);}
+.hero .journey-card h3{margin:0 0 12px;font-size:16px;line-height:1.25;color:#f4f8fc;}
+.hero .journey-card ul{list-style:none;margin:0;padding:0;color:#9fb9cf;font-size:11px;line-height:1.8;}
+.hero .journey-card li:before{content:"•";color:#56c8ff;margin-right:6px;}
+.hero .journey-arrow{position:absolute;top:50%;width:30px;height:2px;background:#25b8ff;box-shadow:0 0 12px rgba(37,184,255,.8);z-index:2;}
+.hero .journey-arrow:after{content:"";position:absolute;right:-1px;top:-4px;width:8px;height:8px;border-top:2px solid #25b8ff;border-right:2px solid #25b8ff;transform:rotate(45deg);}
+.hero .journey-arrow.one{left:calc(33.333% - 15px);}
+.hero .journey-arrow.two{left:calc(66.666% - 15px);}
+@media(max-width:1000px){.hero .visual{min-height:460px}.hero .cloud-journey{min-height:440px}.hero .journey-card{min-height:160px}.hero .journey-card ul{font-size:10px}}
+@media(max-width:760px){.hero .visual{min-height:auto;margin-top:12px}.hero .cloud-journey{min-height:0;padding:22px 14px;border-radius:28px}.hero .journey-platform{width:76px;height:64px}.hero .journey-cloud{margin-bottom:25px}.hero .journey-cards{grid-template-columns:1fr;gap:14px}.hero .journey-card{min-height:auto;text-align:left;padding:16px 18px}.hero .journey-icon{margin:0 0 8px}.hero .journey-arrow,.hero .journey-path{display:none}}
+</style>
+</head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header class="nav">
 <div class="container nav-inner">
@@ -108,14 +143,35 @@
 <div class="hero-meta"><span class="pill">Azure</span><span class="pill">AWS</span><span class="pill">GCP</span><span class="pill">Learn → Build → Automate → Architect</span></div>
 </div>
 <div class="visual">
-<div class="orb">
-<div class="architecture">
-<div class="node"><strong>Cloud Engineering</strong><span>Infrastructure · Networking ·
-                                    Security</span></div>
-<div class="node"><strong>DevOps Automation</strong><span>Terraform · CI/CD ·
-                                    Containers</span></div>
-<div class="node main"><strong>Enterprise Cloud Architecture</strong><span>Design ·
-                                    Governance · Resilience · Scale</span></div>
+<div class="cloud-journey">
+<div class="journey-platforms">
+<div class="journey-platform">Azure<span>Microsoft</span></div>
+<div class="journey-platform">AWS<span>Amazon</span></div>
+<div class="journey-platform">GCP<span>Google Cloud</span></div>
+</div>
+<div class="journey-cloud">
+<strong>Cloud Career <span>Journey</span></strong>
+<small>Learn · Build · Automate · Architect</small>
+</div>
+<div class="journey-path"></div>
+<div class="journey-cards">
+<article class="journey-card">
+<div class="journey-icon">☁</div>
+<h3>Cloud Engineer</h3>
+<ul><li>Infrastructure</li><li>Networking</li><li>Security</li></ul>
+</article>
+<div class="journey-arrow one"></div>
+<article class="journey-card">
+<div class="journey-icon">⚙</div>
+<h3>Senior Cloud<br/>Engineer + DevOps</h3>
+<ul><li>DevOps Automation</li><li>Terraform / IaC</li><li>CI/CD Pipelines</li><li>Containers</li></ul>
+</article>
+<div class="journey-arrow two"></div>
+<article class="journey-card">
+<div class="journey-icon">⌘</div>
+<h3>Enterprise<br/>Cloud Architect</h3>
+<ul><li>Design &amp; Architecture</li><li>Governance &amp; Security</li><li>Resilience &amp; Scale</li><li>Business Enablement</li></ul>
+</article>
 </div>
 </div>
 </div>
