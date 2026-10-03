@@ -842,6 +842,14 @@ h3 {
     }
 }
 
+
+/* Home page hero heading */
+.hero h1{
+    font-size: clamp(38px, 4.4vw, 60px);
+    line-height: 1.08;
+    max-width: 760px;
+}
+
 @media(max-width:1000px) {
     .nav-links {
         display: none
@@ -980,4 +988,30 @@ h3 {
     .brand {
         font-size: 18px
     }
+}
+
+
+/* Home page architecture graphic alignment */
+.visual{
+    position:relative;
+    min-height:430px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.orb{
+    position:absolute;
+    inset:30px 15px 20px 35px;
+}
+.architecture{
+    position:absolute;
+    inset:50px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    align-content:center;
+    justify-content:center;
+    justify-items:stretch;
+    margin:0 auto;
+    max-width:100%;
 }
