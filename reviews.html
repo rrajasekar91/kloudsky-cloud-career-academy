@@ -219,6 +219,16 @@
     }
 }
 </style>
+<style id="google-review-card-rendering">
+.review-rating{color:#66c4ff;letter-spacing:.12em;font-size:15px;margin-bottom:16px;}
+.review-quote{color:#dce8f3;font-size:16px;line-height:1.65;margin:0;}
+.review-meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-top:auto;padding-top:22px;color:#9fb4c8;font-size:13px;}
+.review-meta strong{color:#f4f8fc;font-size:14px;}
+.review-meta span{color:#9fb4c8;}
+.review-meta .link{color:#66c4ff;text-decoration:none;}
+.review-meta .link:hover{text-decoration:underline;}
+.review-form button:disabled{opacity:.65;cursor:wait;}
+</style>
 </head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header class="nav">
@@ -272,7 +282,9 @@
 </div>
 </div>
 <div class="card review-form-card">
-<form class="form review-form" onsubmit="event.preventDefault();submitKloudSkyForm(this,'testimonial')">
+<form class="form review-form" id="kloudskyReviewForm" action="" method="POST" target="reviewSubmitFrame" onsubmit="return submitKloudSkyReview(this)">
+<input type="hidden" name="action" value="testimonial">
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
 <div class="field"><label>Name *</label><input name="name" required=""/></div>
 <div class="field"><label>Program *</label><select name="program" required=""><option value="">Select</option><option>Cloud Engineer</option><option>Senior Cloud Engineer</option><option>Enterprise Cloud Architect</option></select></div>
 <div class="field"><label>Cloud Platform *</label><select name="platform" required=""><option value="">Select</option><option>Azure</option><option>AWS</option><option>GCP</option></select></div>
@@ -285,6 +297,7 @@
 <div class="success">Thank you. Your review has been submitted for approval.</div>
 <div class="error"></div>
 </form>
+<iframe name="reviewSubmitFrame" id="reviewSubmitFrame" title="Review submission" style="display:none"></iframe>
 </div>
 </div>
 </div>
@@ -328,16 +341,105 @@
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
+/* KloudSky Google Sheets review integration */
+const KLOUDSKY_REVIEWS_API = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
 (function(){
-    const list=document.getElementById('reviewList');
+    const list = document.getElementById('reviewList');
+    const form = document.getElementById('kloudskyReviewForm');
+    const frame = document.getElementById('reviewSubmitFrame');
     if(!list) return;
+
+    function escapeHtml(value){
+        return String(value == null ? '' : value)
+            .replace(/&/g,'&amp;')
+            .replace(/</g,'&lt;')
+            .replace(/>/g,'&gt;')
+            .replace(/"/g,'&quot;')
+            .replace(/'/g,'&#039;');
+    }
+
+    function renderStars(rating){
+        const n = Math.max(0, Math.min(5, Number(rating) || 0));
+        return '★'.repeat(n) + '☆'.repeat(5 - n);
+    }
+
+    window.renderKloudSkyReviews = function(reviews){
+        if(!Array.isArray(reviews) || reviews.length === 0){
+            list.innerHTML = '<div class="empty-reviews">No student reviews have been published yet. Be one of the first to share your KloudSky experience.</div>';
+            return;
+        }
+
+        list.innerHTML = reviews.map(function(item){
+            const linkedIn = item.linkedin && /^https:\/\//i.test(item.linkedin) ? '<a class="link" href="' + escapeHtml(item.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : '';
+            const role = item.currentRole ? '<span>' + escapeHtml(item.currentRole) + '</span>' : '';
+            return '<article class="card review-card">' +
+                '<div class="review-rating" aria-label="Rating ' + escapeHtml(item.rating) + ' out of 5">' + renderStars(item.rating) + '</div>' +
+                '<p class="review-quote">“' + escapeHtml(item.review) + '”</p>' +
+                '<div class="review-meta">' +
+                    '<strong>' + escapeHtml(item.name) + '</strong>' +
+                    '<span>' + escapeHtml(item.program) + ' · ' + escapeHtml(item.platform) + '</span>' +
+                    role +
+                    linkedIn +
+                '</div>' +
+            '</article>';
+        }).join('');
+    };
+
+    window.renderKloudSkyReviews = window.renderKloudSkyReviews;
+
+    function loadReviews(){
+        if(!KLOUDSKY_REVIEWS_API || KLOUDSKY_REVIEWS_API.indexOf('PASTE_YOUR_') === 0) return;
+        const script = document.createElement('script');
+        const callback = 'renderKloudSkyReviews';
+        script.src = KLOUDSKY_REVIEWS_API + '?action=reviews&callback=' + callback + '&_=' + Date.now();
+        script.async = true;
+        script.onerror = function(){
+            list.innerHTML = '<div class="empty-reviews">Student reviews are temporarily unavailable. Please check back shortly.</div>';
+        };
+        document.body.appendChild(script);
+    }
+
     function normalizeReviews(){
         [...list.children].forEach(function(card){
-            if(card.classList.contains('empty-reviews')) return;
-            card.classList.add('review-card');
+            if(!card.classList.contains('empty-reviews')) card.classList.add('review-card');
         });
     }
-    normalizeReviews();
+
+    if(form && frame){
+        form.action = KLOUDSKY_REVIEWS_API;
+        let submitting = false;
+        frame.addEventListener('load', function(){
+            if(!submitting) return;
+            submitting = false;
+            const success = form.querySelector('.success');
+            const error = form.querySelector('.error');
+            const button = form.querySelector('button[type="submit"]');
+            if(success) success.style.display = 'block';
+            if(error) error.style.display = 'none';
+            if(button) button.disabled = false;
+            form.reset();
+        });
+
+        window.submitKloudSkyReview = function(reviewForm){
+            if(!reviewForm.reportValidity()) return false;
+            if(!KLOUDSKY_REVIEWS_API || KLOUDSKY_REVIEWS_API.indexOf('PASTE_YOUR_') === 0){
+                const error = reviewForm.querySelector('.error');
+                if(error){ error.textContent = 'Review submission is not configured yet.'; error.style.display = 'block'; }
+                return false;
+            }
+            submitting = true;
+            const button = reviewForm.querySelector('button[type="submit"]');
+            const success = reviewForm.querySelector('.success');
+            const error = reviewForm.querySelector('.error');
+            if(button) button.disabled = true;
+            if(success) success.style.display = 'none';
+            if(error) error.style.display = 'none';
+            return true;
+        };
+    }
+
+    loadReviews();
     new MutationObserver(normalizeReviews).observe(list,{childList:true});
 })();
 </script>
