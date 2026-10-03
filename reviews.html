@@ -72,7 +72,154 @@
     .footer .footer-grid{grid-template-columns:1fr;}
     .footer .footer-grid > div:first-child{grid-column:auto;}
 }
-</style></head>
+</style>
+<style id="student-review-modern-layout">
+/* Student Reviews - modern balanced layout */
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+    align-items:stretch;
+}
+.review-grid > .empty-reviews{
+    grid-column:1 / -1;
+    width:100%;
+}
+.review-grid > .review-card,
+.review-grid > .card,
+.review-grid > article,
+.review-grid > div:not(.empty-reviews){
+    min-width:0;
+    min-height:280px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    box-sizing:border-box;
+}
+.review-grid > .review-card > :last-child,
+.review-grid > .card > :last-child,
+.review-grid > article > :last-child,
+.review-grid > div:not(.empty-reviews) > :last-child{
+    margin-top:auto;
+}
+
+/* Review submission area */
+.review-submit-layout{
+    display:grid;
+    grid-template-columns:minmax(280px,.85fr) minmax(440px,1.15fr);
+    gap:48px;
+    align-items:start;
+}
+.review-submit-copy{
+    padding-top:6px;
+}
+.review-submit-copy h2{
+    max-width:520px;
+    margin-bottom:16px;
+}
+.review-submit-copy > p{
+    max-width:560px;
+    margin-bottom:26px;
+}
+.review-benefits{
+    display:grid;
+    gap:12px;
+    margin-top:24px;
+}
+.review-benefit{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:13px 15px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    background:rgba(255,255,255,.025);
+}
+.review-benefit-number{
+    flex:0 0 30px;
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid rgba(53,167,255,.35);
+    color:#66c4ff;
+    font-size:11px;
+    font-weight:800;
+}
+.review-benefit strong{
+    display:block;
+    margin-bottom:3px;
+    color:#f4f8fc;
+    font-size:14px;
+}
+.review-benefit span{
+    color:#9fb4c8;
+    font-size:13px;
+    line-height:1.45;
+}
+.review-form-card{
+    width:100%;
+    box-sizing:border-box;
+}
+.review-form{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px 18px;
+}
+.review-form .field{
+    min-width:0;
+}
+.review-form .field-review,
+.review-form .field-linkedin,
+.review-form .field-role,
+.review-form .review-consent,
+.review-form button,
+.review-form .success,
+.review-form .error{
+    grid-column:1 / -1;
+}
+.review-form .field textarea{
+    min-height:150px;
+}
+.review-form .review-consent{
+    margin-top:2px;
+}
+.review-form button{
+    justify-self:start;
+}
+@media(max-width:900px){
+    .review-submit-layout{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+    .review-form{
+        grid-template-columns:1fr 1fr;
+    }
+}
+@media(max-width:680px){
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+    .review-grid > .empty-reviews{
+        grid-column:auto;
+    }
+    .review-form{
+        grid-template-columns:1fr;
+    }
+    .review-form .field-review,
+    .review-form .field-linkedin,
+    .review-form .field-role,
+    .review-form .review-consent,
+    .review-form button,
+    .review-form .success,
+    .review-form .error{
+        grid-column:auto;
+    }
+}
+</style>
+</head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header class="nav">
 <div class="container nav-inner">
@@ -97,15 +244,15 @@
 </header>
 <main id="main">
 <section class="page-hero">
-<div class="container">
-<h1>What Our Students<br/><span style="color:#66c4ff">Say.</span></h1>
+<div class="container"><span class="eyebrow">Student Reviews</span>
+<h1>What Our Students Say.</h1>
 <p>Student feedback is submitted directly through KloudSky. Reviews are checked before publication to
                     keep this section useful and authentic.</p>
 </div>
 </section>
 <section class="section">
 <div class="container">
-<div class="grid2" id="reviewList">
+<div class="review-grid" id="reviewList">
 <div class="empty-reviews">No student reviews have been published yet. Be one of the first to share
                         your KloudSky experience.</div>
 </div>
@@ -113,41 +260,28 @@
 </section>
 <section class="section alt">
 <div class="container">
-<div class="program-layout">
-<div><span class="eyebrow">Share your experience</span>
+<div class="review-submit-layout">
+<div class="review-submit-copy">
+<span class="eyebrow">Share your experience</span>
 <h2>Have You Trained With KloudSky?</h2>
-<p style="color:var(--muted)">Tell future learners what you found useful, what you built and how
-                            the learning experience helped you.</p>
+<p style="color:var(--muted)">Tell future learners what you found useful, what you built and how the learning experience helped you.</p>
+<div class="review-benefits">
+<div class="review-benefit"><span class="review-benefit-number">01</span><div><strong>Share</strong><span>Tell future learners what you found useful.</span></div></div>
+<div class="review-benefit"><span class="review-benefit-number">02</span><div><strong>Showcase</strong><span>Highlight the skills and projects you built.</span></div></div>
+<div class="review-benefit"><span class="review-benefit-number">03</span><div><strong>Inspire</strong><span>Help other learners understand the KloudSky experience.</span></div></div>
 </div>
-<div class="card">
-<form class="form" onsubmit="event.preventDefault();submitKloudSkyForm(this,'testimonial')">
+</div>
+<div class="card review-form-card">
+<form class="form review-form" onsubmit="event.preventDefault();submitKloudSkyForm(this,'testimonial')">
 <div class="field"><label>Name *</label><input name="name" required=""/></div>
-<div class="field"><label>Program *</label><select name="program" required="">
-<option value="">Select</option>
-<option>Cloud Engineer</option>
-<option>Senior Cloud Engineer</option>
-<option>Enterprise Cloud Architect</option>
-</select></div>
-<div class="field"><label>Cloud Platform *</label><select name="platform" required="">
-<option value="">Select</option>
-<option>Azure</option>
-<option>AWS</option>
-<option>GCP</option>
-</select></div>
-<div class="field"><label>Rating *</label><select name="rating" required="">
-<option value="">Select</option>
-<option>5</option>
-<option>4</option>
-<option>3</option>
-<option>2</option>
-<option>1</option>
-</select></div>
-<div class="field"><label>Your Review *</label><textarea name="review" required=""></textarea>
-</div>
-<div class="field"><label>LinkedIn Profile (optional)</label><input name="linkedin"/></div>
-<div class="field"><label>Current Role (optional)</label><input name="currentRole"/></div>
-<label class="notice"><input name="consent" required="" type="checkbox" value="yes"/> I give
-                                KloudSky permission to publish this review on its website.</label><button class="btn btn-primary" type="submit">Submit Review →</button>
+<div class="field"><label>Program *</label><select name="program" required=""><option value="">Select</option><option>Cloud Engineer</option><option>Senior Cloud Engineer</option><option>Enterprise Cloud Architect</option></select></div>
+<div class="field"><label>Cloud Platform *</label><select name="platform" required=""><option value="">Select</option><option>Azure</option><option>AWS</option><option>GCP</option></select></div>
+<div class="field"><label>Rating *</label><select name="rating" required=""><option value="">Select</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+<div class="field field-review"><label>Your Review *</label><textarea name="review" required=""></textarea></div>
+<div class="field field-linkedin"><label>LinkedIn Profile (optional)</label><input name="linkedin"/></div>
+<div class="field field-role"><label>Current Role (optional)</label><input name="currentRole"/></div>
+<label class="notice review-consent"><input name="consent" required="" type="checkbox" value="yes"/> I give KloudSky permission to publish this review on its website.</label>
+<button class="btn btn-primary" type="submit">Submit Review →</button>
 <div class="success">Thank you. Your review has been submitted for approval.</div>
 <div class="error"></div>
 </form>
@@ -193,5 +327,19 @@
 </footer>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+(function(){
+    const list=document.getElementById('reviewList');
+    if(!list) return;
+    function normalizeReviews(){
+        [...list.children].forEach(function(card){
+            if(card.classList.contains('empty-reviews')) return;
+            card.classList.add('review-card');
+        });
+    }
+    normalizeReviews();
+    new MutationObserver(normalizeReviews).observe(list,{childList:true});
+})();
+</script>
 </body>
 </html>
