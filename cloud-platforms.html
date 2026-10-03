@@ -1,18 +1,182 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Cloud engineering career training across Microsoft Azure, Amazon Web Services and Google Cloud."><meta name="theme-color" content="#07111f"><title>Cloud Platforms | KloudSky Cloud Career Academy</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"></head><body><a class="skip" href="#main">Skip to content</a>
-<header class="nav"><div class="container nav-inner">
-<a class="brand" href="index.html"><span class="brand-mark">K</span><span>KloudSky<small>Cloud Career Academy</small></span></a>
-<button class="mobile-btn" aria-label="Open menu">☰</button>
-<nav class="nav-links">
-<a href="index.html">Home</a>
-<a href="career-programs.html">Career Programs</a>
-<a href="cloud-platforms.html" class="active">Cloud Platforms</a>
-<a href="how-we-train.html">How We Train</a>
-<a href="career-support.html">Career Support</a>
-<a href="reviews.html">Student Reviews</a>
-<a href="contact.html" class="btn btn-primary nav-cta">Contact / Enroll</a>
-</nav></div></header><main id="main"><section class="page-hero"><div class="container"><span class="eyebrow">Cloud Platforms</span><h1>One Career Framework. Three Cloud Platforms.</h1><p>Learn cloud engineering principles that transfer across platforms, then apply them deeply within Azure, AWS or GCP.</p></div></section><section class="section"><div class="container" style="display:grid;gap:20px"><article class="card platform azure" id="azure"><span class="tag">Microsoft Azure</span><h2>Azure Cloud Engineering</h2><p>Build practical Azure skills across infrastructure, networking, identity, security, automation, DevOps and architecture.</p><div class="checklist"><div class="check">Azure infrastructure</div><div class="check">Virtual networking</div><div class="check">Entra identity</div><div class="check">Security & governance</div><div class="check">Terraform</div><div class="check">Azure DevOps / GitHub</div><div class="check">Monitoring</div><div class="check">Architecture</div></div></article><article class="card platform aws" id="aws"><span class="tag">Amazon Web Services</span><h2>AWS Cloud Engineering</h2><p>Develop practical AWS capability across infrastructure, networking, IAM, security, DevOps, automation and architecture.</p><div class="checklist"><div class="check">AWS compute</div><div class="check">VPC networking</div><div class="check">IAM</div><div class="check">Security</div><div class="check">Terraform</div><div class="check">CI/CD</div><div class="check">Monitoring</div><div class="check">Architecture</div></div></article><article class="card platform gcp" id="gcp"><span class="tag">Google Cloud</span><h2>GCP Cloud Engineering</h2><p>Develop practical GCP capability across infrastructure, networking, security, DevOps, automation and cloud architecture.</p><div class="checklist"><div class="check">GCP infrastructure</div><div class="check">VPC networking</div><div class="check">IAM</div><div class="check">Security</div><div class="check">Terraform</div><div class="check">CI/CD</div><div class="check">Monitoring</div><div class="check">Architecture</div></div></article></div></section><section class="section alt"><div class="container"><div class="grid2"><div><span class="eyebrow">Choose wisely</span><h2>Which Cloud Should You Learn?</h2><p style="color:var(--muted)">There is no single cloud that is right for every learner. Consider your current skills, target employers, role preference and long-term career goals.</p></div><div class="card"><h3>Need help deciding?</h3><p>Tell us about your current role and target career. We'll help you understand which KloudSky path may fit.</p><a class="btn btn-primary" href="contact.html">Talk to KloudSky →</a></div></div></div></section></main><footer class="footer"><div class="container"><div class="footer-grid">
-<div><a class="brand" href="index.html"><span class="brand-mark">K</span><span>KloudSky<small>Cloud Career Academy</small></span></a><p class="desc">Job-ready cloud engineering training focused on real-world skills, hands-on projects, DevOps automation, architecture and career preparation.</p></div>
-<div><h4>Career Programs</h4><a href="career-programs.html#cloud-engineer">Cloud Engineer</a><a href="career-programs.html#senior-cloud-engineer">Senior Cloud Engineer</a><a href="career-programs.html#architect">Enterprise Cloud Architect</a></div>
-<div><h4>Platforms</h4><a href="cloud-platforms.html#azure">Azure</a><a href="cloud-platforms.html#aws">AWS</a><a href="cloud-platforms.html#gcp">GCP</a></div>
-<div><h4>Career</h4><a href="how-we-train.html">How We Train</a><a href="career-support.html">Career & Placement Assistance</a><a href="reviews.html">Student Reviews</a><a href="contact.html">Contact / Enroll</a></div>
-</div><div class="footer-bottom"><span>© <span data-year></span> KloudSky Technologies. All Rights Reserved.</span><span>Azure · AWS · GCP</span></div></div></footer><script src="assets/js/config.js"></script><script src="assets/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Cloud engineering career training across Microsoft Azure, Amazon Web Services and Google Cloud.">
+    <meta name="theme-color" content="#07182B">
+    <title>Cloud Platforms | KloudSky Cloud Career Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body><a class="skip" href="#main">Skip to content</a>
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">
+                <img src="assets/images/kloudsky-logo-transparent.png" alt="KloudSky Technologies" class="kloudsky-logo">
+                <span class="brand-text">
+                    <span class="brand-name">KloudSky</span>
+                    <small class="brand-subtitle">Cloud Career Academy</small>
+                </span>
+            </a>
+            <button class="mobile-btn" aria-label="Open menu">☰</button>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="career-programs.html">Career Programs</a>
+                <a href="cloud-platforms.html" class="active">Cloud Platforms</a>
+                <a href="how-we-train.html">How We Train</a>
+                <a href="career-support.html">Career Support</a>
+                <a href="reviews.html">Student Reviews</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Contact / Enroll</a>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-hero">
+            <div class="container"><span class="eyebrow">Cloud Platforms</span>
+                <h1>One Career Framework. Three Cloud Platforms.</h1>
+                <p>Learn cloud engineering principles that transfer across platforms, then apply them deeply within
+                    Azure, AWS or GCP.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container" style="display:grid;gap:20px">
+                <article class="card platform azure" id="azure">
+                    <div class="platform-brand">
+                        <svg class="platform-logo" viewBox="0 0 64 64" role="img" aria-label="Microsoft Azure logo"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#0078D4" d="M35.6 5 18.1 42.8h12.1l10.9-20.7L48.8 5z"/>
+                            <path fill="#0078D4" d="M27.1 42.8h20.1l-8.2-13.9-6 11.3z"/>
+                            <path fill="#50E6FF" d="M41.1 22.1 50.2 42.8H60L45.1 14.6z"/>
+                        </svg>
+                        <span class="tag">Microsoft Azure</span>
+                    </div>
+                    <h2>Azure Cloud Engineering</h2>
+                    <p>Build practical Azure skills across infrastructure, networking, identity, security, automation,
+                        DevOps and architecture.</p>
+                    <div class="checklist">
+                        <div class="check">Azure infrastructure</div>
+                        <div class="check">Virtual networking</div>
+                        <div class="check">Entra identity</div>
+                        <div class="check">Security & governance</div>
+                        <div class="check">Terraform</div>
+                        <div class="check">Azure DevOps / GitHub</div>
+                        <div class="check">Monitoring</div>
+                        <div class="check">Architecture</div>
+                    </div>
+                </article>
+                <article class="card platform aws" id="aws">
+                    <div class="platform-brand">
+                        <svg class="platform-logo" viewBox="0 0 64 64" role="img" aria-label="Amazon Web Services logo"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <text x="32" y="29" text-anchor="middle"
+                                font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700"
+                                fill="#232F3E">aws</text>
+                            <path d="M13 38c10 8 28 11 40 1" fill="none" stroke="#FF9900" stroke-width="4"
+                                stroke-linecap="round"/>
+                            <path d="M49 37l4 2-3 4" fill="none" stroke="#FF9900" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="tag">Amazon Web Services</span>
+                    </div>
+                    <h2>AWS Cloud Engineering</h2>
+                    <p>Develop practical AWS capability across infrastructure, networking, IAM, security, DevOps,
+                        automation and architecture.</p>
+                    <div class="checklist">
+                        <div class="check">AWS compute</div>
+                        <div class="check">VPC networking</div>
+                        <div class="check">IAM</div>
+                        <div class="check">Security</div>
+                        <div class="check">Terraform</div>
+                        <div class="check">CI/CD</div>
+                        <div class="check">Monitoring</div>
+                        <div class="check">Architecture</div>
+                    </div>
+                </article>
+                <article class="card platform gcp" id="gcp">
+                    <div class="platform-brand">
+                        <svg class="platform-logo" viewBox="0 0 64 64" role="img" aria-label="Google Cloud logo"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#4285F4" d="M34 14.5h9.2l11.1 19.2-5.1 8.9-10.9-18.8H34z"/>
+                            <path fill="#34A853" d="M49.2 42.6H29.1l-5.2-9h30.4z"/>
+                            <path fill="#FBBC04" d="m23.9 33.6 5.2 9-7.1 12.3h-10.4z"/>
+                            <path fill="#EA4335" d="M11.6 54.9 22.8 35.5l5.2 9-6 10.4z"/>
+                        </svg>
+                        <span class="tag">Google Cloud</span>
+                    </div>
+                    <h2>GCP Cloud Engineering</h2>
+                    <p>Develop practical GCP capability across infrastructure, networking, security, DevOps, automation
+                        and cloud architecture.</p>
+                    <div class="checklist">
+                        <div class="check">GCP infrastructure</div>
+                        <div class="check">VPC networking</div>
+                        <div class="check">IAM</div>
+                        <div class="check">Security</div>
+                        <div class="check">Terraform</div>
+                        <div class="check">CI/CD</div>
+                        <div class="check">Monitoring</div>
+                        <div class="check">Architecture</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="section alt">
+            <div class="container">
+                <div class="grid2">
+                    <div><span class="eyebrow">Choose wisely</span>
+                        <h2>Which Cloud Should You Learn?</h2>
+                        <p style="color:var(--muted)">There is no single cloud that is right for every learner. Consider
+                            your current skills, target employers, role preference and long-term career goals.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Need help deciding?</h3>
+                        <p>Tell us about your current role and target career. We'll help you understand which KloudSky
+                            path may fit.</p><a class="btn btn-primary" href="contact.html">Talk to KloudSky →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><a class="brand" href="index.html">
+                        <img src="assets/images/kloudsky-logo-transparent.png" alt="KloudSky Technologies" class="kloudsky-logo">
+                        <span class="brand-text">
+                            <span class="brand-name">KloudSky</span>
+                            <small class="brand-subtitle">Cloud Career Academy</small>
+                        </span>
+                    </a>
+                    <p class="desc">Job-ready cloud engineering training focused on real-world skills, hands-on
+                        projects, DevOps automation, architecture and career preparation.</p>
+                </div>
+                <div>
+                    <h4>Career Programs</h4><a href="career-programs.html#cloud-engineer">Cloud Engineer</a><a
+                        href="career-programs.html#senior-cloud-engineer">Senior Cloud Engineer</a><a
+                        href="career-programs.html#architect">Enterprise Cloud Architect</a>
+                </div>
+                <div>
+                    <h4>Platforms</h4><a href="cloud-platforms.html#azure">Azure</a><a
+                        href="cloud-platforms.html#aws">AWS</a><a href="cloud-platforms.html#gcp">GCP</a>
+                </div>
+                <div>
+                    <h4>Career</h4><a href="how-we-train.html">How We Train</a><a href="career-support.html">Career &
+                        Placement Assistance</a><a href="reviews.html">Student Reviews</a><a href="contact.html">Contact
+                        / Enroll</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© <span data-year></span> KloudSky Technologies. All Rights
+                    Reserved.</span><span>Azure · AWS · GCP</span></div>
+        </div>
+    </footer>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
