@@ -1,19 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description"
-        content="Cloud engineering career training across Microsoft Azure, Amazon Web Services and Google Cloud.">
-    <meta name="theme-color" content="#07182B">
-    <title>Cloud Platforms | KloudSky Cloud Career Academy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cloud engineering career training across Microsoft Azure, Amazon Web Services and Google Cloud." name="description"/>
+<meta content="#07182B" name="theme-color"/>
+<title>Cloud Platforms | KloudSky Cloud Career Academy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
 <style>
 .platform-brand .platform-logo{
     width:72px;
@@ -33,7 +30,6 @@
     margin-bottom:0;
 }
 </style>
-
 <style>
 .platform-brand .aws-logo{
     width:96px;
@@ -41,91 +37,150 @@
     flex:0 0 96px;
 }
 </style>
-</head>
-
+<style id="footer-layout-v2">
+/* KloudSky footer layout correction - shared across all pages */
+.footer .footer-grid{
+    display:grid;
+    grid-template-columns:minmax(240px,1.65fr) minmax(160px,1fr) minmax(110px,.75fr) minmax(190px,1.2fr) minmax(190px,1fr);
+    gap:34px;
+    align-items:start;
+}
+.footer .footer-grid > div{min-width:0;}
+.footer .footer-contact-column h4{margin:0 0 18px;}
+.footer .footer-contact-column a{display:flex;align-items:center;gap:8px;margin:0 0 13px;color:inherit;text-decoration:none;}
+.footer .footer-contact-column a:hover{color:#66c4ff;}
+.footer .footer-contact-icon{color:#66c4ff;font-size:16px;line-height:1;flex:0 0 auto;}
+.footer .footer-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    padding-top:20px;
+}
+.footer .footer-socials-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:10px;
+    margin-left:auto;
+}
+.footer .footer-social{
+    width:38px;
+    height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:9px;
+    background:rgba(255,255,255,.035);
+    color:#c9d8e7;
+    text-decoration:none;
+    transition:.2s ease;
+}
+.footer .footer-social:hover{
+    color:#fff;
+    border-color:rgba(102,196,255,.5);
+    background:rgba(53,167,255,.12);
+    transform:translateY(-1px);
+}
+.footer .footer-social svg{width:18px;height:18px;display:block;}
+.footer .footer-social[aria-label="LinkedIn"] svg{width:20px;height:20px;}
+@media(max-width:980px){
+    .footer .footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:28px;}
+}
+@media(max-width:680px){
+    .footer .footer-grid{grid-template-columns:1fr 1fr;gap:24px;}
+    .footer .footer-grid > div:first-child{grid-column:1 / -1;}
+    .footer .footer-bottom{align-items:flex-start;flex-direction:column;gap:16px;}
+    .footer .footer-socials-bottom{margin-left:0;justify-content:flex-start;}
+}
+@media(max-width:460px){
+    .footer .footer-grid{grid-template-columns:1fr;}
+    .footer .footer-grid > div:first-child{grid-column:auto;}
+}
+</style></head>
 <body><a class="skip" href="#main">Skip to content</a>
-    <header class="nav">
-        <div class="container nav-inner">
-            <a class="brand" href="index.html">
-                <img src="assets/images/kloudsky-logo-transparent.png" alt="KloudSky Technologies" class="kloudsky-logo">
-                <span class="brand-text">
-                    <span class="brand-name">KloudSky</span>
-                    <small class="brand-subtitle">Cloud Career Academy</small>
-                </span>
-            </a>
-            <button class="mobile-btn" aria-label="Open menu">☰</button>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="career-programs.html">Career Programs</a>
-                <a href="cloud-platforms.html" class="active">Cloud Platforms</a>
-                <a href="how-we-train.html">How We Train</a>
-                <a href="career-support.html">Career Support</a>
-                <a href="reviews.html">Student Reviews</a>
-                <a href="contact.html" class="btn btn-primary nav-cta">Contact / Enroll</a>
-            </nav>
-        </div>
-    </header>
-    <main id="main">
-        <section class="page-hero">
-            <div class="container"><span class="eyebrow">Cloud Platforms</span>
-                <h1>One Career Framework. Three Cloud Platforms.</h1>
-                <p>Learn cloud engineering principles that transfer across platforms, then apply them deeply within
+<header class="nav">
+<div class="container nav-inner">
+<a class="brand" href="index.html">
+<img alt="KloudSky Technologies" class="kloudsky-logo" src="assets/images/kloudsky-logo-transparent.png"/>
+<span class="brand-text">
+<span class="brand-name">KloudSky</span>
+<small class="brand-subtitle">Cloud Career Academy</small>
+</span>
+</a>
+<button aria-label="Open menu" class="mobile-btn">☰</button>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="career-programs.html">Career Programs</a>
+<a class="active" href="cloud-platforms.html">Cloud Platforms</a>
+<a href="how-we-train.html">How We Train</a>
+<a href="career-support.html">Career Support</a>
+<a href="reviews.html">Student Reviews</a>
+<a class="btn btn-primary nav-cta" href="contact.html">Contact / Enroll</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="container"><span class="eyebrow">Cloud Platforms</span>
+<h1>One Career Framework. Three Cloud Platforms.</h1>
+<p>Learn cloud engineering principles that transfer across platforms, then apply them deeply within
                     Azure, AWS or GCP.</p>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container" style="display:grid;gap:20px">
-                <article class="card platform azure" id="azure">
-                    <div class="platform-brand">
-                        <svg class="platform-logo azure-logo" role="img" aria-label="Microsoft Azure logo" width="150" height="150" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="e399c19f-b68f-429d-b176-18c2117ff73c" x1="-1032.172" x2="-1059.213" y1="145.312" y2="65.426" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#114a8b"/>
-            <stop offset="1" stop-color="#0669bc"/>
-        </linearGradient>
-        <linearGradient id="ac2a6fc2-ca48-4327-9a3c-d4dcc3256e15" x1="-1023.725" x2="-1029.98" y1="108.083" y2="105.968" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-opacity=".3"/>
-            <stop offset=".071" stop-opacity=".2"/>
-            <stop offset=".321" stop-opacity=".1"/>
-            <stop offset=".623" stop-opacity=".05"/>
-            <stop offset="1" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="a7fee970-a784-4bb1-af8d-63d18e5f7db9" x1="-1027.165" x2="-997.482" y1="147.642" y2="68.561" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#3ccbf4"/>
-            <stop offset="1" stop-color="#2892df"/>
-        </linearGradient>
-    </defs>
-    <path fill="url(#e399c19f-b68f-429d-b176-18c2117ff73c)" d="M33.338 6.544h26.038l-27.03 80.087a4.152 4.152 0 0 1-3.933 2.824H8.149a4.145 4.145 0 0 1-3.928-5.47L29.404 9.368a4.152 4.152 0 0 1 3.934-2.825z"/>
-    <path fill="#0078d4" d="M71.175 60.261h-41.29a1.911 1.911 0 0 0-1.305 3.309l26.532 24.764a4.171 4.171 0 0 0 2.846 1.121h23.38z"/>
-    <path fill="url(#ac2a6fc2-ca48-4327-9a3c-d4dcc3256e15)" d="M33.338 6.544a4.118 4.118 0 0 0-3.943 2.879L4.252 83.917a4.14 4.14 0 0 0 3.908 5.538h20.787a4.443 4.443 0 0 0 3.41-2.9l5.014-14.777 17.91 16.705a4.237 4.237 0 0 0 2.666.972H81.24L71.024 60.261l-29.781.007L59.47 6.544z"/>
-    <path fill="url(#a7fee970-a784-4bb1-af8d-63d18e5f7db9)" d="M66.595 9.364a4.145 4.145 0 0 0-3.928-2.82H33.648a4.146 4.146 0 0 1 3.928 2.82l25.184 74.62a4.146 4.146 0 0 1-3.928 5.472h29.02a4.146 4.146 0 0 0 3.927-5.472z"/>
+</div>
+</section>
+<section class="section">
+<div class="container" style="display:grid;gap:20px">
+<article class="card platform azure" id="azure">
+<div class="platform-brand">
+<svg aria-label="Microsoft Azure logo" class="platform-logo azure-logo" height="150" role="img" viewbox="0 0 96 96" width="150" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradienttransform="matrix(1 0 0 -1 1075 158)" gradientunits="userSpaceOnUse" id="e399c19f-b68f-429d-b176-18c2117ff73c" x1="-1032.172" x2="-1059.213" y1="145.312" y2="65.426">
+<stop offset="0" stop-color="#114a8b"></stop>
+<stop offset="1" stop-color="#0669bc"></stop>
+</lineargradient>
+<lineargradient gradienttransform="matrix(1 0 0 -1 1075 158)" gradientunits="userSpaceOnUse" id="ac2a6fc2-ca48-4327-9a3c-d4dcc3256e15" x1="-1023.725" x2="-1029.98" y1="108.083" y2="105.968">
+<stop offset="0" stop-opacity=".3"></stop>
+<stop offset=".071" stop-opacity=".2"></stop>
+<stop offset=".321" stop-opacity=".1"></stop>
+<stop offset=".623" stop-opacity=".05"></stop>
+<stop offset="1" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient gradienttransform="matrix(1 0 0 -1 1075 158)" gradientunits="userSpaceOnUse" id="a7fee970-a784-4bb1-af8d-63d18e5f7db9" x1="-1027.165" x2="-997.482" y1="147.642" y2="68.561">
+<stop offset="0" stop-color="#3ccbf4"></stop>
+<stop offset="1" stop-color="#2892df"></stop>
+</lineargradient>
+</defs>
+<path d="M33.338 6.544h26.038l-27.03 80.087a4.152 4.152 0 0 1-3.933 2.824H8.149a4.145 4.145 0 0 1-3.928-5.47L29.404 9.368a4.152 4.152 0 0 1 3.934-2.825z" fill="url(#e399c19f-b68f-429d-b176-18c2117ff73c)"></path>
+<path d="M71.175 60.261h-41.29a1.911 1.911 0 0 0-1.305 3.309l26.532 24.764a4.171 4.171 0 0 0 2.846 1.121h23.38z" fill="#0078d4"></path>
+<path d="M33.338 6.544a4.118 4.118 0 0 0-3.943 2.879L4.252 83.917a4.14 4.14 0 0 0 3.908 5.538h20.787a4.443 4.443 0 0 0 3.41-2.9l5.014-14.777 17.91 16.705a4.237 4.237 0 0 0 2.666.972H81.24L71.024 60.261l-29.781.007L59.47 6.544z" fill="url(#ac2a6fc2-ca48-4327-9a3c-d4dcc3256e15)"></path>
+<path d="M66.595 9.364a4.145 4.145 0 0 0-3.928-2.82H33.648a4.146 4.146 0 0 1 3.928 2.82l25.184 74.62a4.146 4.146 0 0 1-3.928 5.472h29.02a4.146 4.146 0 0 0 3.927-5.472z" fill="url(#a7fee970-a784-4bb1-af8d-63d18e5f7db9)"></path>
 </svg>
-                        <span class="tag">Microsoft Azure</span>
-                    </div>
-                    <h2>Azure Cloud Engineering</h2>
-                    <p>Build practical Azure skills across infrastructure, networking, identity, security, automation,
+<span class="tag">Microsoft Azure</span>
+</div>
+<h2>Azure Cloud Engineering</h2>
+<p>Build practical Azure skills across infrastructure, networking, identity, security, automation,
                         DevOps and architecture.</p>
-                    <div class="checklist">
-                        <div class="check">Azure infrastructure</div>
-                        <div class="check">Virtual networking</div>
-                        <div class="check">Entra identity</div>
-                        <div class="check">Security & governance</div>
-                        <div class="check">Terraform</div>
-                        <div class="check">Azure DevOps / GitHub</div>
-                        <div class="check">Monitoring</div>
-                        <div class="check">Architecture</div>
-                    </div>
-                </article>
-                <article class="card platform aws" id="aws">
-                    <div class="platform-brand">
-                        <svg class="platform-logo aws-logo" role="img" aria-label="Amazon Web Services logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 304 182" style="enable-background:new 0 0 304 182;" xml:space="preserve">
+<div class="checklist">
+<div class="check">Azure infrastructure</div>
+<div class="check">Virtual networking</div>
+<div class="check">Entra identity</div>
+<div class="check">Security &amp; governance</div>
+<div class="check">Terraform</div>
+<div class="check">Azure DevOps / GitHub</div>
+<div class="check">Monitoring</div>
+<div class="check">Architecture</div>
+</div>
+</article>
+<article class="card platform aws" id="aws">
+<div class="platform-brand">
+<svg aria-label="Amazon Web Services logo" class="platform-logo aws-logo" id="Layer_1" role="img" style="enable-background:new 0 0 304 182;" version="1.1" viewbox="0 0 304 182" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
 	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FF9900;}
 </style>
 <g>
-	<path class="st0" d="M86.4,66.4c0,3.7,0.4,6.7,1.1,8.9c0.8,2.2,1.8,4.6,3.2,7.2c0.5,0.8,0.7,1.6,0.7,2.3c0,1-0.6,2-1.9,3l-6.3,4.2
+<path class="st0" d="M86.4,66.4c0,3.7,0.4,6.7,1.1,8.9c0.8,2.2,1.8,4.6,3.2,7.2c0.5,0.8,0.7,1.6,0.7,2.3c0,1-0.6,2-1.9,3l-6.3,4.2
 		c-0.9,0.6-1.8,0.9-2.6,0.9c-1,0-2-0.5-3-1.4C76.2,90,75,88.4,74,86.8c-1-1.7-2-3.6-3.1-5.9c-7.8,9.2-17.6,13.8-29.4,13.8
 		c-8.4,0-15.1-2.4-20-7.2c-4.9-4.8-7.4-11.2-7.4-19.2c0-8.5,3-15.4,9.1-20.6c6.1-5.2,14.2-7.8,24.5-7.8c3.4,0,6.9,0.3,10.6,0.8
 		c3.7,0.5,7.5,1.3,11.5,2.2v-7.3c0-7.6-1.6-12.9-4.7-16c-3.2-3.1-8.6-4.6-16.3-4.6c-3.5,0-7.1,0.4-10.8,1.3c-3.7,0.9-7.3,2-10.8,3.4
@@ -145,129 +200,105 @@
 		c2,0.5,3.9,1,5.7,1.6c1.8,0.6,3.2,1.2,4.2,1.8c1.4,0.8,2.4,1.6,3,2.5c0.6,0.8,0.9,1.9,0.9,3.3v4.7c0,2.1-0.8,3.2-2.3,3.2
 		c-0.8,0-2.1-0.4-3.8-1.2c-5.7-2.6-12.1-3.9-19.2-3.9c-5.7,0-10.2,0.9-13.3,2.8c-3.1,1.9-4.7,4.8-4.7,8.9c0,2.8,1,5.2,3,7.1
 		c2,1.9,5.7,3.8,11,5.5l14.2,4.5c7.2,2.3,12.4,5.5,15.5,9.6c3.1,4.1,4.6,8.8,4.6,14c0,4.3-0.9,8.2-2.6,11.6
-		c-1.8,3.4-4.2,6.4-7.3,8.8c-3.1,2.5-6.8,4.3-11.1,5.6C264.4,94.4,259.7,95.1,254.6,95.1z"/>
-	<g>
-		<path class="st1" d="M273.5,143.7c-32.9,24.3-80.7,37.2-121.8,37.2c-57.6,0-109.5-21.3-148.7-56.7c-3.1-2.8-0.3-6.6,3.4-4.4
-			c42.4,24.6,94.7,39.5,148.8,39.5c36.5,0,76.6-7.6,113.5-23.2C274.2,133.6,278.9,139.7,273.5,143.7z"/>
-		<path class="st1" d="M287.2,128.1c-4.2-5.4-27.8-2.6-38.5-1.3c-3.2,0.4-3.7-2.4-0.8-4.5c18.8-13.2,49.7-9.4,53.3-5
-			c3.6,4.5-1,35.4-18.6,50.2c-2.7,2.3-5.3,1.1-4.1-1.9C282.5,155.7,291.4,133.4,287.2,128.1z"/>
-	</g>
+		c-1.8,3.4-4.2,6.4-7.3,8.8c-3.1,2.5-6.8,4.3-11.1,5.6C264.4,94.4,259.7,95.1,254.6,95.1z"></path>
+<g>
+<path class="st1" d="M273.5,143.7c-32.9,24.3-80.7,37.2-121.8,37.2c-57.6,0-109.5-21.3-148.7-56.7c-3.1-2.8-0.3-6.6,3.4-4.4
+			c42.4,24.6,94.7,39.5,148.8,39.5c36.5,0,76.6-7.6,113.5-23.2C274.2,133.6,278.9,139.7,273.5,143.7z"></path>
+<path class="st1" d="M287.2,128.1c-4.2-5.4-27.8-2.6-38.5-1.3c-3.2,0.4-3.7-2.4-0.8-4.5c18.8-13.2,49.7-9.4,53.3-5
+			c3.6,4.5-1,35.4-18.6,50.2c-2.7,2.3-5.3,1.1-4.1-1.9C282.5,155.7,291.4,133.4,287.2,128.1z"></path>
+</g>
 </g>
 </svg>
-                        <span class="tag">Amazon Web Services</span>
-                    </div>
-                    <h2>AWS Cloud Engineering</h2>
-                    <p>Develop practical AWS capability across infrastructure, networking, IAM, security, DevOps,
+<span class="tag">Amazon Web Services</span>
+</div>
+<h2>AWS Cloud Engineering</h2>
+<p>Develop practical AWS capability across infrastructure, networking, IAM, security, DevOps,
                         automation and architecture.</p>
-                    <div class="checklist">
-                        <div class="check">AWS compute</div>
-                        <div class="check">VPC networking</div>
-                        <div class="check">IAM</div>
-                        <div class="check">Security</div>
-                        <div class="check">Terraform</div>
-                        <div class="check">CI/CD</div>
-                        <div class="check">Monitoring</div>
-                        <div class="check">Architecture</div>
-                    </div>
-                </article>
-                <article class="card platform gcp" id="gcp">
-                    <div class="platform-brand">
-                        <svg class="platform-logo gcp-logo" role="img" aria-label="Google Cloud logo" width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#EA4335" d="M10.313 5.376l1.887-1.5-.332-.414a5.935 5.935 0 00-5.586-1.217 5.89 5.89 0 00-3.978 4.084c-.03.113.312-.098.463-.056l2.608-.428s.127-.124.201-.205c1.16-1.266 3.126-1.432 4.465-.354l.272.09z"/><path fill="#4285F4" d="M13.637 6.3a5.835 5.835 0 00-1.77-2.838l-1.83 1.82a3.226 3.226 0 011.193 2.564v.323c.9 0 1.63.725 1.63 1.62 0 .893-.73 1.619-1.63 1.619l-3.257-.003-.325.035v2.507l.325.053h3.257a4.234 4.234 0 004.08-2.962A4.199 4.199 0 0013.636 6.3z"/><path fill="#34A853" d="M4.711 13.999H7.97v-2.594H4.71c-.232 0-.461-.066-.672-.161l-.458.14-1.313 1.297-.114.447a4.254 4.254 0 002.557.87z"/><path fill="#FBBC05" d="M4.711 5.572A4.234 4.234 0 00.721 8.44a4.206 4.206 0 001.433 4.688l1.89-1.884a1.617 1.617 0 01.44-3.079 1.63 1.63 0 011.714.936l1.89-1.878A4.24 4.24 0 004.71 5.572z"/></svg>
-                        <span class="tag">Google Cloud</span>
-                    </div>
-                    <h2>GCP Cloud Engineering</h2>
-                    <p>Develop practical GCP capability across infrastructure, networking, security, DevOps, automation
+<div class="checklist">
+<div class="check">AWS compute</div>
+<div class="check">VPC networking</div>
+<div class="check">IAM</div>
+<div class="check">Security</div>
+<div class="check">Terraform</div>
+<div class="check">CI/CD</div>
+<div class="check">Monitoring</div>
+<div class="check">Architecture</div>
+</div>
+</article>
+<article class="card platform gcp" id="gcp">
+<div class="platform-brand">
+<svg aria-label="Google Cloud logo" class="platform-logo gcp-logo" fill="none" height="800px" role="img" viewbox="0 0 16 16" width="800px" xmlns="http://www.w3.org/2000/svg"><path d="M10.313 5.376l1.887-1.5-.332-.414a5.935 5.935 0 00-5.586-1.217 5.89 5.89 0 00-3.978 4.084c-.03.113.312-.098.463-.056l2.608-.428s.127-.124.201-.205c1.16-1.266 3.126-1.432 4.465-.354l.272.09z" fill="#EA4335"></path><path d="M13.637 6.3a5.835 5.835 0 00-1.77-2.838l-1.83 1.82a3.226 3.226 0 011.193 2.564v.323c.9 0 1.63.725 1.63 1.62 0 .893-.73 1.619-1.63 1.619l-3.257-.003-.325.035v2.507l.325.053h3.257a4.234 4.234 0 004.08-2.962A4.199 4.199 0 0013.636 6.3z" fill="#4285F4"></path><path d="M4.711 13.999H7.97v-2.594H4.71c-.232 0-.461-.066-.672-.161l-.458.14-1.313 1.297-.114.447a4.254 4.254 0 002.557.87z" fill="#34A853"></path><path d="M4.711 5.572A4.234 4.234 0 00.721 8.44a4.206 4.206 0 001.433 4.688l1.89-1.884a1.617 1.617 0 01.44-3.079 1.63 1.63 0 011.714.936l1.89-1.878A4.24 4.24 0 004.71 5.572z" fill="#FBBC05"></path></svg>
+<span class="tag">Google Cloud</span>
+</div>
+<h2>GCP Cloud Engineering</h2>
+<p>Develop practical GCP capability across infrastructure, networking, security, DevOps, automation
                         and cloud architecture.</p>
-                    <div class="checklist">
-                        <div class="check">GCP infrastructure</div>
-                        <div class="check">VPC networking</div>
-                        <div class="check">IAM</div>
-                        <div class="check">Security</div>
-                        <div class="check">Terraform</div>
-                        <div class="check">CI/CD</div>
-                        <div class="check">Monitoring</div>
-                        <div class="check">Architecture</div>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <section class="section alt">
-            <div class="container">
-                <div class="grid2">
-                    <div><span class="eyebrow">Choose wisely</span>
-                        <h2>Which Cloud Should You Learn?</h2>
-                        <p style="color:var(--muted)">There is no single cloud that is right for every learner. Consider
+<div class="checklist">
+<div class="check">GCP infrastructure</div>
+<div class="check">VPC networking</div>
+<div class="check">IAM</div>
+<div class="check">Security</div>
+<div class="check">Terraform</div>
+<div class="check">CI/CD</div>
+<div class="check">Monitoring</div>
+<div class="check">Architecture</div>
+</div>
+</article>
+</div>
+</section>
+<section class="section alt">
+<div class="container">
+<div class="grid2">
+<div><span class="eyebrow">Choose wisely</span>
+<h2>Which Cloud Should You Learn?</h2>
+<p style="color:var(--muted)">There is no single cloud that is right for every learner. Consider
                             your current skills, target employers, role preference and long-term career goals.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Need help deciding?</h3>
-                        <p>Tell us about your current role and target career. We'll help you understand which KloudSky
+</div>
+<div class="card">
+<h3>Need help deciding?</h3>
+<p>Tell us about your current role and target career. We'll help you understand which KloudSky
                             path may fit.</p><a class="btn btn-primary" href="contact.html">Talk to KloudSky →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div><a class="brand" href="index.html">
-                        <img src="assets/images/kloudsky-logo-transparent.png" alt="KloudSky Technologies" class="kloudsky-logo">
-                        <span class="brand-text">
-                            <span class="brand-name">KloudSky</span>
-                            <small class="brand-subtitle">Cloud Career Academy</small>
-                        </span>
-                    </a>
-                    <p class="desc">Job-ready cloud engineering training focused on real-world skills, hands-on
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid"><div><a class="brand" href="index.html">
+<img alt="KloudSky Technologies" class="kloudsky-logo" src="assets/images/kloudsky-logo-transparent.png"/>
+<span class="brand-text">
+<span class="brand-name">KloudSky</span>
+<small class="brand-subtitle">Cloud Career Academy</small>
+</span>
+</a>
+<p class="desc">Job-ready cloud engineering training focused on real-world skills, hands-on
                         projects, DevOps automation, architecture and career preparation.</p>
-                </div>
-                <div>
-                    <h4>Career Programs</h4><a href="career-programs.html#cloud-engineer">Cloud Engineer</a><a
-                        href="career-programs.html#senior-cloud-engineer">Senior Cloud Engineer</a><a
-                        href="career-programs.html#architect">Enterprise Cloud Architect</a>
-                </div>
-                <div>
-                    <h4>Platforms</h4><a href="cloud-platforms.html#azure">Azure</a><a
-                        href="cloud-platforms.html#aws">AWS</a><a href="cloud-platforms.html#gcp">GCP</a>
-                </div>
-                <div>
-                    <h4>Career</h4><a href="how-we-train.html">How We Train</a><a href="career-support.html">Career &
+</div><div>
+<h4>Career Programs</h4><a href="career-programs.html#cloud-engineer">Cloud Engineer</a><a href="career-programs.html#senior-cloud-engineer">Senior Cloud Engineer</a><a href="career-programs.html#architect">Enterprise Cloud Architect</a>
+</div><div>
+<h4>Platforms</h4><a href="cloud-platforms.html#azure">Azure</a><a href="cloud-platforms.html#aws">AWS</a><a href="cloud-platforms.html#gcp">GCP</a>
+</div><div>
+<h4>Career</h4><a href="how-we-train.html">How We Train</a><a href="career-support.html">Career &amp;
                         Placement Assistance</a><a href="reviews.html">Student Reviews</a><a href="contact.html">Contact
                         / Enroll</a>
-                </div>
-            </div>
-            
-<div class="footer-contact">
-    <div class="footer-contact-title">Contact & Connect</div>
-    <div class="footer-contact-items">
-        <a href="mailto:info@kloudsky.com" class="footer-contact-item">
-            <span class="footer-contact-icon" aria-hidden="true">✉</span>
-            <span>info@kloudsky.com</span>
-        </a>
-        <a href="tel:+916369204406" class="footer-contact-item">
-            <span class="footer-contact-icon" aria-hidden="true">☎</span>
-            <span>+91 63692 04406</span>
-        </a>
-        <div class="footer-socials" aria-label="Social media links">
-            <a href="#" class="footer-social" aria-label="GitHub" title="GitHub">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .6A11.4 11.4 0 0 0 8.4 23c.57.1.78-.25.78-.55v-2.03c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.54-.29-5.2-1.27-5.2-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.73.8 1.18 1.82 1.18 3.07 0 4.41-2.67 5.37-5.21 5.66.41.35.77 1.05.77 2.12v3.14c0 .3.21.66.79.55A11.4 11.4 0 0 0 12 .6Z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/kloudsky-technologies/" class="footer-social" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.48 2.48 0 1 1 0 3.5a2.48 2.48 0 0 1 4.98 0ZM.24 8.02h4.88V24H.24V8.02Zm7.94 0h4.68v2.19h.07c.65-1.23 2.24-2.53 4.61-2.53 4.93 0 5.84 3.24 5.84 7.45V24h-4.87v-7.87c0-1.88-.04-4.3-2.62-4.3-2.62 0-3.02 2.05-3.02 4.16V24H8.18V8.02Z"/></svg>
-            </a>
-            <a href="#" class="footer-social" aria-label="YouTube" title="YouTube">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3.02 3.02 0 0 0-2.13-2.14C19.49 3.55 12 3.55 12 3.55s-7.49 0-9.37.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.13 2.14c1.88.51 9.37.51 9.37.51s7.49 0 9.37-.51a3.02 3.02 0 0 0 2.13-2.14c.5-1.88.5-5.8.5-5.8s0-3.92-.5-5.8ZM9.55 15.58V8.42L15.82 12l-6.27 3.58Z"/></svg>
-            </a>
-        </div>
-    </div>
+</div><div class="footer-contact-column"><h4>Contact &amp; Connect</h4><a href="mailto:info@kloudsky.com"><span aria-hidden="true" class="footer-contact-icon">✉</span><span>info@kloudsky.com</span></a><a href="tel:+916369204406"><span aria-hidden="true" class="footer-contact-icon">☎</span><span>+91 63692 04406</span></a></div></div>
+
+<div class="footer-bottom"><span>© <span data-year=""></span> KloudSky Technologies. All Rights
+                    Reserved.</span><div aria-label="Social media links" class="footer-socials-bottom">
+<a aria-label="GitHub" class="footer-social" href="#" title="GitHub">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .6a11.4 11.4 0 0 0-3.61 22.21c.57.1.78-.25.78-.55v-2.15c-3.17.69-3.84-1.34-3.84-1.34-.52-1.31-1.27-1.66-1.27-1.66-1.03-.71.08-.7.08-.7 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.44.11-3 0 0 .95-.3 3.13 1.16a10.9 10.9 0 0 1 5.7 0c2.18-1.46 3.13-1.16 3.13-1.16.62 1.56.23 2.71.11 3 .73.79 1.17 1.8 1.17 3.04 0 4.37-2.67 5.32-5.21 5.61.41.35.77 1.04.77 2.1v3.11c0 .3.21.65.79.54A11.4 11.4 0 0 0 12 .6Z" fill="currentColor"></path></svg>
+</a>
+<a aria-label="LinkedIn" class="footer-social" href="https://www.linkedin.com/company/kloudsky-technologies/" rel="noopener" target="_blank" title="LinkedIn">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5.2 3.4A2.4 2.4 0 1 1 5.2 8a2.4 2.4 0 0 1 0-4.6ZM3.1 9.8h4.2V21H3.1V9.8Zm6.8 0h4v1.53h.06c.56-1.02 1.93-2.1 3.98-2.1 4.26 0 5.05 2.8 5.05 6.45V21h-4.2v-4.72c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.51V21H9.9V9.8Z" fill="currentColor"></path></svg>
+</a>
+<a aria-label="YouTube" class="footer-social" href="#" title="YouTube">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.12-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.52A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.12 2.13c1.88.52 9.38.52 9.38.52s7.5 0 9.38-.52a3 3 0 0 0 2.12-2.13A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.55 15.6V8.4L15.8 12l-6.25 3.6Z" fill="currentColor"></path></svg>
+</a>
+</div></div>
 </div>
-
-<div class="footer-bottom"><span>© <span data-year></span> KloudSky Technologies. All Rights
-                    Reserved.</span><span>Azure · AWS · GCP</span></div>
-        </div>
-    </footer>
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/main.js"></script>
+</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
-
 </html>
