@@ -72,7 +72,39 @@
     .footer .footer-grid{grid-template-columns:1fr;}
     .footer .footer-grid > div:first-child{grid-column:auto;}
 }
-</style></head>
+</style>
+<style>
+.journey-section{padding-top:52px;}
+.journey-head{text-align:center;max-width:980px;margin:0 auto 34px;}
+.journey-label{display:inline-block;color:#66c4ff;font-size:13px;font-weight:800;letter-spacing:.12em;margin-bottom:10px;}
+.journey-head h2{margin:0 auto 12px;font-size:clamp(24px,3vw,38px);line-height:1.15;color:#f4f8fc;}
+.journey-head p{margin:0 auto;color:#afc4d8;max-width:760px;font-size:16px;line-height:1.6;}
+.journey{position:relative;}
+.journey-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.journey-stage{position:relative;padding:24px;border:1px solid rgba(84,199,255,.18);border-radius:18px;background:linear-gradient(145deg,rgba(16,45,72,.92),rgba(11,34,58,.88));box-shadow:0 12px 30px rgba(0,0,0,.12);}
+.journey-stage:hover{border-color:rgba(84,199,255,.38);transform:translateY(-2px);transition:.2s ease;}
+.journey-number{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;border:1px solid rgba(84,199,255,.5);border-radius:50%;color:#66c4ff;font-size:13px;font-weight:800;margin-bottom:12px;}
+.journey-title{font-size:12px;font-weight:800;letter-spacing:.12em;color:#8fb8d7;margin-bottom:18px;}
+.journey-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;}
+.journey-step h3{margin:0 0 8px;color:#f4f8fc;font-size:22px;}
+.journey-step p{margin:0;color:#afc4d8;font-size:14px;line-height:1.55;}
+.journey-arrow{color:#54c7ff;font-size:26px;font-weight:700;}
+.journey-final{border-color:rgba(33,150,243,.42);background:linear-gradient(145deg,rgba(18,65,105,.96),rgba(11,34,58,.92));}
+.journey-final .journey-title{color:#66c4ff;}
+.journey-connector{height:48px;display:flex;align-items:center;justify-content:center;color:#54c7ff;font-size:28px;font-weight:700;}
+@media(max-width:850px){
+.journey-row{grid-template-columns:1fr;}
+.journey-connector{height:28px;}
+}
+@media(max-width:620px){
+.journey-section{padding-top:40px;}
+.journey-head h2{font-size:25px;}
+.journey-flow{grid-template-columns:1fr;}
+.journey-arrow{transform:rotate(90deg);justify-self:center;}
+.journey-stage{padding:20px;}
+}
+</style>
+</head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header class="nav">
 <div class="container nav-inner">
@@ -103,42 +135,34 @@
                     architecture and career preparation.</p>
 </div>
 </section>
-<section class="section">
+<section class="section journey-section">
 <div class="container">
-<div class="timeline">
-<div class="timeline-item"><span class="circle">01</span>
-<h3>Learn</h3>
-<p>Understand the technology, architecture and concepts behind the services you use.</p>
+<div class="journey-head">
+<span class="journey-label">YOUR CLOUD CAREER JOURNEY</span>
+<h2>Learn → Build → Automate → Troubleshoot → Secure → Architect → Build Projects → Prepare</h2>
+<p>Our training progresses from cloud fundamentals to hands-on engineering, automation, architecture and career readiness.</p>
 </div>
-<div class="timeline-item"><span class="circle">02</span>
-<h3>Build</h3>
-<p>Deploy and configure real cloud environments through guided hands-on labs.</p>
+<div class="journey">
+<div class="journey-row">
+<article class="journey-stage">
+<div class="journey-number">01</div><div class="journey-title">FOUNDATION</div>
+<div class="journey-flow"><div class="journey-step"><h3>Learn</h3><p>Understand the technology, architecture and concepts behind the services you use.</p></div><span class="journey-arrow">→</span><div class="journey-step"><h3>Build</h3><p>Deploy and configure real cloud environments through guided hands-on labs.</p></div></div>
+</article>
+<article class="journey-stage">
+<div class="journey-number">02</div><div class="journey-title">ENGINEERING</div>
+<div class="journey-flow"><div class="journey-step"><h3>Automate</h3><p>Use Terraform, Git, scripting and CI/CD practices to make infrastructure repeatable.</p></div><span class="journey-arrow">→</span><div class="journey-step"><h3>Troubleshoot</h3><p>Work through realistic infrastructure, networking, identity and deployment scenarios.</p></div></div>
+</article>
 </div>
-<div class="timeline-item"><span class="circle">03</span>
-<h3>Automate</h3>
-<p>Use Terraform, Git, scripting and CI/CD practices to make infrastructure repeatable.</p>
-</div>
-<div class="timeline-item"><span class="circle">04</span>
-<h3>Troubleshoot</h3>
-<p>Work through realistic infrastructure, networking, identity and deployment scenarios.</p>
-</div>
-<div class="timeline-item"><span class="circle">05</span>
-<h3>Secure</h3>
-<p>Apply practical identity, access, networking and cloud security principles.</p>
-</div>
-<div class="timeline-item"><span class="circle">06</span>
-<h3>Architect</h3>
-<p>Translate technical and business requirements into solution designs.</p>
-</div>
-<div class="timeline-item"><span class="circle">07</span>
-<h3>Build Projects</h3>
-<p>Combine multiple skills into portfolio-ready projects that demonstrate what you can actually
-                            do.</p>
-</div>
-<div class="timeline-item"><span class="circle">08</span>
-<h3>Prepare</h3>
-<p>Practice technical interviews, architecture discussions, communication and career
-                            positioning.</p>
+<div class="journey-connector"><span>↓</span></div>
+<div class="journey-row">
+<article class="journey-stage">
+<div class="journey-number">03</div><div class="journey-title">ARCHITECTURE</div>
+<div class="journey-flow"><div class="journey-step"><h3>Secure</h3><p>Apply practical identity, access, networking and cloud security principles.</p></div><span class="journey-arrow">→</span><div class="journey-step"><h3>Architect</h3><p>Translate technical and business requirements into solution designs.</p></div></div>
+</article>
+<article class="journey-stage journey-final">
+<div class="journey-number">04</div><div class="journey-title">CAREER READY</div>
+<div class="journey-flow"><div class="journey-step"><h3>Build Projects</h3><p>Combine multiple skills into portfolio-ready projects that demonstrate what you can actually do.</p></div><span class="journey-arrow">→</span><div class="journey-step"><h3>Prepare</h3><p>Practice technical interviews, architecture discussions, communication and career positioning.</p></div></div>
+</article>
 </div>
 </div>
 </div>
