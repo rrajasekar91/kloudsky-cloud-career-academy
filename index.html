@@ -74,21 +74,22 @@
 }
 </style>
 <style id="cloud-career-journey-visual">
-/* Final hero alignment: image fills the right hero area without a separate frame. */
+/* FINAL HERO FIT — image fills the exact right-side hero area.
+   Desktop target follows the red-box proportion shown in the supplied reference. */
 .hero-grid{
     grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);
-    align-items:stretch;
+    align-items:center !important;
     gap:18px;
 }
 
 .cloud-career-visual{
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio:1.385 / 1 !important;
     min-width:0;
-    width:100%;
-    height:100% !important;
     min-height:0 !important;
+    align-self:center !important;
     margin:0 !important;
     padding:0 !important;
     background:transparent !important;
@@ -100,14 +101,15 @@
 
 .cloud-career-journey-image{
     display:block !important;
-    width:94% !important;
-    height:94% !important;
+    width:100% !important;
+    height:100% !important;
     max-width:none !important;
+    min-height:0 !important;
     margin:0 !important;
     padding:0 !important;
     border:0 !important;
     border-radius:0 !important;
-    object-fit:contain !important;
+    object-fit:fill !important;
     object-position:center center !important;
     transform:none !important;
     box-shadow:none !important;
@@ -121,8 +123,9 @@
     }
 
     .cloud-career-visual{
-        width:100%;
+        width:100% !important;
         height:auto !important;
+        aspect-ratio:auto !important;
         overflow:hidden !important;
     }
 
@@ -345,7 +348,7 @@
 <p>Understand the technology, architecture and core concepts.</p>
 </div>
 <div class="step"><b>02</b>
-<h3>Build</h3>
+<h3>Practice</h3>
 <p>Apply knowledge through guided hands-on cloud labs.</p>
 </div>
 <div class="step"><b>03</b>
@@ -365,7 +368,7 @@
 <p>Design solutions from technical and business requirements.</p>
 </div>
 <div class="step"><b>07</b>
-<h3>Build Projects</h3>
+<h3>Build Portfolio</h3>
 <p>Create portfolio-ready work that demonstrates capability.</p>
 </div>
 <div class="step"><b>08</b>
