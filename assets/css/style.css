@@ -1308,38 +1308,40 @@ h3 {
     overflow:hidden !important;
 }
 
-/* KloudSky: keep the real text together; only colors differ.
-   No pseudo-elements and therefore no spacing/overlap. */
+/* KloudSky: exact word split — Kloud white + Sky light blue.
+   The two generated pieces are inline, so there is NO artificial gap. */
 .nav .brand-name,
 .footer .brand-name,
 .footer .footer-grid .brand-name{
     display:inline-block !important;
     width:max-content !important;
-    font-size:20px !important;
+    font-size:0 !important;
     line-height:1 !important;
     letter-spacing:-.02em !important;
     white-space:nowrap !important;
     color:transparent !important;
-    background:linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #ffffff 54%,
-        #66c4ff 54%,
-        #66c4ff 100%
-    ) !important;
-    -webkit-background-clip:text !important;
-    background-clip:text !important;
 }
 
-/* Completely disable the previous pseudo-element approach. */
 .nav .brand-name::before,
-.nav .brand-name::after,
 .footer .brand-name::before,
+.footer .footer-grid .brand-name::before{
+    content:"Kloud" !important;
+    display:inline !important;
+    color:#ffffff !important;
+    font-size:20px !important;
+    line-height:1 !important;
+    letter-spacing:-.02em !important;
+}
+
+.nav .brand-name::after,
 .footer .brand-name::after,
-.footer .footer-grid .brand-name::before,
 .footer .footer-grid .brand-name::after{
-    content:none !important;
-    display:none !important;
+    content:"Sky" !important;
+    display:inline !important;
+    color:#66c4ff !important;
+    font-size:20px !important;
+    line-height:1 !important;
+    letter-spacing:-.02em !important;
 }
 
 /* Restore natural brand-text height so subtitle and description
@@ -1395,9 +1397,12 @@ h3 {
 
 /* Mobile brand sizing */
 @media(max-width:620px){
-    .nav .brand-name,
-    .footer .brand-name,
-    .footer .footer-grid .brand-name{
+    .nav .brand-name::before,
+    .nav .brand-name::after,
+    .footer .brand-name::before,
+    .footer .brand-name::after,
+    .footer .footer-grid .brand-name::before,
+    .footer .footer-grid .brand-name::after{
         font-size:18px !important;
     }
 
