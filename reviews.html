@@ -72,7 +72,169 @@
     .footer .footer-grid{grid-template-columns:1fr;}
     .footer .footer-grid > div:first-child{grid-column:auto;}
 }
-</style></head>
+</style>
+<style id="student-review-modern-layout">
+/* Student Reviews - modern balanced layout */
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+    align-items:stretch;
+}
+.review-grid > .empty-reviews{
+    grid-column:1 / -1;
+    width:100%;
+}
+.review-grid > .review-card,
+.review-grid > .card,
+.review-grid > article,
+.review-grid > div:not(.empty-reviews){
+    min-width:0;
+    min-height:280px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    box-sizing:border-box;
+}
+.review-grid > .review-card > :last-child,
+.review-grid > .card > :last-child,
+.review-grid > article > :last-child,
+.review-grid > div:not(.empty-reviews) > :last-child{
+    margin-top:auto;
+}
+
+/* Review submission area */
+.review-submit-layout{
+    display:grid;
+    grid-template-columns:minmax(280px,.85fr) minmax(440px,1.15fr);
+    gap:48px;
+    align-items:start;
+}
+.review-submit-copy{
+    padding-top:6px;
+}
+.review-submit-copy h2{
+    max-width:520px;
+    margin-bottom:16px;
+}
+.review-submit-copy > p{
+    max-width:560px;
+    margin-bottom:26px;
+}
+.review-benefits{
+    display:grid;
+    gap:12px;
+    margin-top:24px;
+}
+.review-benefit{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:13px 15px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    background:rgba(255,255,255,.025);
+}
+.review-benefit-number{
+    flex:0 0 30px;
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid rgba(53,167,255,.35);
+    color:#66c4ff;
+    font-size:11px;
+    font-weight:800;
+}
+.review-benefit strong{
+    display:block;
+    margin-bottom:3px;
+    color:#f4f8fc;
+    font-size:14px;
+}
+.review-benefit span{
+    color:#9fb4c8;
+    font-size:13px;
+    line-height:1.45;
+}
+.review-form-card{
+    width:100%;
+    box-sizing:border-box;
+}
+.review-form{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px 18px;
+}
+.review-form .field{
+    min-width:0;
+}
+.review-form .field-review,
+.review-form .field-linkedin,
+.review-form .field-role,
+.review-form .review-consent,
+.review-form button,
+.review-form .success,
+.review-form .error{
+    grid-column:1 / -1;
+}
+.review-form .field textarea{
+    min-height:150px;
+}
+.review-form .review-consent{
+    margin-top:2px;
+}
+.review-form button{
+    justify-self:start;
+}
+@media(max-width:900px){
+    .review-submit-layout{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+    .review-form{
+        grid-template-columns:1fr 1fr;
+    }
+}
+@media(max-width:680px){
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+    .review-grid > .empty-reviews{
+        grid-column:auto;
+    }
+    .review-form{
+        grid-template-columns:1fr;
+    }
+    .review-form .field-review,
+    .review-form .field-linkedin,
+    .review-form .field-role,
+    .review-form .review-consent,
+    .review-form button,
+    .review-form .success,
+    .review-form .error{
+        grid-column:auto;
+    }
+}
+</style>
+<style id="google-review-card-rendering">
+.review-rating{color:#66c4ff;letter-spacing:.12em;font-size:15px;margin-bottom:16px;}
+.review-quote{color:#dce8f3;font-size:16px;line-height:1.65;margin:0;}
+.review-meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-top:auto;padding-top:22px;color:#9fb4c8;font-size:13px;}
+.review-meta strong{color:#f4f8fc;font-size:14px;}
+.review-meta span{color:#9fb4c8;}
+.review-meta .link{color:#66c4ff;text-decoration:none;}
+.review-meta .link:hover{text-decoration:underline;}
+.review-form button:disabled{opacity:.65;cursor:wait;}
+</style>
+<style id="student-review-heading-final">
+.page-hero h1 .heading-accent{
+    color:#66c4ff;
+}
+</style>
+</head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header class="nav">
 <div class="container nav-inner">
@@ -97,15 +259,15 @@
 </header>
 <main id="main">
 <section class="page-hero">
-<div class="container"><span class="eyebrow">Student Reviews</span>
-<h1>What Our Students Say.</h1>
+<div class="container">
+<h1>What Our Students<br><span class="heading-accent">Say.</span></h1>
 <p>Student feedback is submitted directly through KloudSky. Reviews are checked before publication to
                     keep this section useful and authentic.</p>
 </div>
 </section>
 <section class="section">
 <div class="container">
-<div class="grid2" id="reviewList">
+<div class="review-grid" id="reviewList">
 <div class="empty-reviews">No student reviews have been published yet. Be one of the first to share
                         your KloudSky experience.</div>
 </div>
@@ -113,44 +275,34 @@
 </section>
 <section class="section alt">
 <div class="container">
-<div class="program-layout">
-<div><span class="eyebrow">Share your experience</span>
+<div class="review-submit-layout">
+<div class="review-submit-copy">
+<span class="eyebrow">Share your experience</span>
 <h2>Have You Trained With KloudSky?</h2>
-<p style="color:var(--muted)">Tell future learners what you found useful, what you built and how
-                            the learning experience helped you.</p>
+<p style="color:var(--muted)">Tell future learners what you found useful, what you built and how the learning experience helped you.</p>
+<div class="review-benefits">
+<div class="review-benefit"><span class="review-benefit-number">01</span><div><strong>Share</strong><span>Tell future learners what you found useful.</span></div></div>
+<div class="review-benefit"><span class="review-benefit-number">02</span><div><strong>Showcase</strong><span>Highlight the skills and projects you built.</span></div></div>
+<div class="review-benefit"><span class="review-benefit-number">03</span><div><strong>Inspire</strong><span>Help other learners understand the KloudSky experience.</span></div></div>
 </div>
-<div class="card">
-<form class="form" onsubmit="event.preventDefault();submitKloudSkyForm(this,'testimonial')">
+</div>
+<div class="card review-form-card">
+<form class="form review-form" id="kloudskyReviewForm" action="" method="POST" target="reviewSubmitFrame" onsubmit="return submitKloudSkyReview(this)">
+<input type="hidden" name="action" value="testimonial">
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
 <div class="field"><label>Name *</label><input name="name" required=""/></div>
-<div class="field"><label>Program *</label><select name="program" required="">
-<option value="">Select</option>
-<option>Cloud Engineer</option>
-<option>Senior Cloud Engineer</option>
-<option>Enterprise Cloud Architect</option>
-</select></div>
-<div class="field"><label>Cloud Platform *</label><select name="platform" required="">
-<option value="">Select</option>
-<option>Azure</option>
-<option>AWS</option>
-<option>GCP</option>
-</select></div>
-<div class="field"><label>Rating *</label><select name="rating" required="">
-<option value="">Select</option>
-<option>5</option>
-<option>4</option>
-<option>3</option>
-<option>2</option>
-<option>1</option>
-</select></div>
-<div class="field"><label>Your Review *</label><textarea name="review" required=""></textarea>
-</div>
-<div class="field"><label>LinkedIn Profile (optional)</label><input name="linkedin"/></div>
-<div class="field"><label>Current Role (optional)</label><input name="currentRole"/></div>
-<label class="notice"><input name="consent" required="" type="checkbox" value="yes"/> I give
-                                KloudSky permission to publish this review on its website.</label><button class="btn btn-primary" type="submit">Submit Review →</button>
+<div class="field"><label>Program *</label><select name="program" required=""><option value="">Select</option><option>Cloud Engineer</option><option>Senior Cloud Engineer</option><option>Enterprise Cloud Architect</option></select></div>
+<div class="field"><label>Cloud Platform *</label><select name="platform" required=""><option value="">Select</option><option>Azure</option><option>AWS</option><option>GCP</option></select></div>
+<div class="field"><label>Rating *</label><select name="rating" required=""><option value="">Select</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+<div class="field field-review"><label>Your Review *</label><textarea name="review" required=""></textarea></div>
+<div class="field field-linkedin"><label>LinkedIn Profile (optional)</label><input name="linkedin"/></div>
+<div class="field field-role"><label>Current Role (optional)</label><input name="currentRole"/></div>
+<label class="notice review-consent"><input name="consent" required="" type="checkbox" value="yes"/> I give KloudSky permission to publish this review on its website.</label>
+<button class="btn btn-primary" type="submit">Submit Review →</button>
 <div class="success">Thank you. Your review has been submitted for approval.</div>
 <div class="error"></div>
 </form>
+<iframe name="reviewSubmitFrame" id="reviewSubmitFrame" title="Review submission" style="display:none"></iframe>
 </div>
 </div>
 </div>
@@ -193,5 +345,108 @@
 </footer>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+/* KloudSky Google Sheets review integration */
+const KLOUDSKY_REVIEWS_API = 'https://script.google.com/macros/s/AKfycbz0m76Em1mPF8ua0KUz9hZpf9dSYSV5Il-QpOvKqVtxGkswCESDd4jLysj8Vt0q_qbG/exec';
+
+(function(){
+    const list = document.getElementById('reviewList');
+    const form = document.getElementById('kloudskyReviewForm');
+    const frame = document.getElementById('reviewSubmitFrame');
+    if(!list) return;
+
+    function escapeHtml(value){
+        return String(value == null ? '' : value)
+            .replace(/&/g,'&amp;')
+            .replace(/</g,'&lt;')
+            .replace(/>/g,'&gt;')
+            .replace(/"/g,'&quot;')
+            .replace(/'/g,'&#039;');
+    }
+
+    function renderStars(rating){
+        const n = Math.max(0, Math.min(5, Number(rating) || 0));
+        return '★'.repeat(n) + '☆'.repeat(5 - n);
+    }
+
+    window.renderKloudSkyReviews = function(reviews){
+        if(!Array.isArray(reviews) || reviews.length === 0){
+            list.innerHTML = '<div class="empty-reviews">No student reviews have been published yet. Be one of the first to share your KloudSky experience.</div>';
+            return;
+        }
+
+        list.innerHTML = reviews.map(function(item){
+            const linkedIn = item.linkedin && /^https:\/\//i.test(item.linkedin) ? '<a class="link" href="' + escapeHtml(item.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : '';
+            const role = item.currentRole ? '<span>' + escapeHtml(item.currentRole) + '</span>' : '';
+            return '<article class="card review-card">' +
+                '<div class="review-rating" aria-label="Rating ' + escapeHtml(item.rating) + ' out of 5">' + renderStars(item.rating) + '</div>' +
+                '<p class="review-quote">“' + escapeHtml(item.review) + '”</p>' +
+                '<div class="review-meta">' +
+                    '<strong>' + escapeHtml(item.name) + '</strong>' +
+                    '<span>' + escapeHtml(item.program) + ' · ' + escapeHtml(item.platform) + '</span>' +
+                    role +
+                    linkedIn +
+                '</div>' +
+            '</article>';
+        }).join('');
+    };
+
+    window.renderKloudSkyReviews = window.renderKloudSkyReviews;
+
+    function loadReviews(){
+        if(!KLOUDSKY_REVIEWS_API || KLOUDSKY_REVIEWS_API.indexOf('PASTE_YOUR_') === 0) return;
+        const script = document.createElement('script');
+        const callback = 'renderKloudSkyReviews';
+        script.src = KLOUDSKY_REVIEWS_API + '?action=reviews&callback=' + callback + '&_=' + Date.now();
+        script.async = true;
+        script.onerror = function(){
+            list.innerHTML = '<div class="empty-reviews">Student reviews are temporarily unavailable. Please check back shortly.</div>';
+        };
+        document.body.appendChild(script);
+    }
+
+    function normalizeReviews(){
+        [...list.children].forEach(function(card){
+            if(!card.classList.contains('empty-reviews')) card.classList.add('review-card');
+        });
+    }
+
+    if(form && frame){
+        form.action = KLOUDSKY_REVIEWS_API;
+        let submitting = false;
+        frame.addEventListener('load', function(){
+            if(!submitting) return;
+            submitting = false;
+            const success = form.querySelector('.success');
+            const error = form.querySelector('.error');
+            const button = form.querySelector('button[type="submit"]');
+            if(success) success.style.display = 'block';
+            if(error) error.style.display = 'none';
+            if(button) button.disabled = false;
+            form.reset();
+        });
+
+        window.submitKloudSkyReview = function(reviewForm){
+            if(!reviewForm.reportValidity()) return false;
+            if(!KLOUDSKY_REVIEWS_API || KLOUDSKY_REVIEWS_API.indexOf('PASTE_YOUR_') === 0){
+                const error = reviewForm.querySelector('.error');
+                if(error){ error.textContent = 'Review submission is not configured yet.'; error.style.display = 'block'; }
+                return false;
+            }
+            submitting = true;
+            const button = reviewForm.querySelector('button[type="submit"]');
+            const success = reviewForm.querySelector('.success');
+            const error = reviewForm.querySelector('.error');
+            if(button) button.disabled = true;
+            if(success) success.style.display = 'none';
+            if(error) error.style.display = 'none';
+            return true;
+        };
+    }
+
+    loadReviews();
+    new MutationObserver(normalizeReviews).observe(list,{childList:true});
+})();
+</script>
 </body>
 </html>
