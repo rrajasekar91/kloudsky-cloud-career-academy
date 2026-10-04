@@ -58,6 +58,19 @@
     transform:translateY(-1px);
 }
 .footer .footer-social svg{width:18px;height:18px;display:block;}
+/* Official brand colors for communication/social icons */
+.footer .footer-social[aria-label="GitHub"]{color:#fff;}
+.footer .footer-social[aria-label="LinkedIn"]{color:#0A66C2;}
+.footer .footer-social[aria-label="YouTube"]{color:#FF0000;}
+.footer .footer-social[aria-label="WhatsApp"]{color:#25D366;}
+
+.footer .footer-social[aria-label="GitHub"]:hover{color:#fff;background:rgba(255,255,255,.10);}
+.footer .footer-social[aria-label="LinkedIn"]:hover{color:#0A66C2;background:rgba(10,102,194,.12);}
+.footer .footer-social[aria-label="YouTube"]:hover{color:#FF0000;background:rgba(255,0,0,.10);}
+.footer .footer-social[aria-label="WhatsApp"]:hover{color:#25D366;background:rgba(37,211,102,.12);}
+
+.footer .footer-contact-column a[href^="https://wa.me/"] .footer-contact-icon{color:#25D366;}
+
 .footer .footer-social[aria-label="LinkedIn"] svg{width:20px;height:20px;}
 @media(max-width:980px){
     .footer .footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:28px;}
