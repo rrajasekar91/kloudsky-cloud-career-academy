@@ -1313,7 +1313,8 @@ h3 {
 .nav .brand-name,
 .footer .brand-name,
 .footer .footer-grid .brand-name{
-    display:block !important;
+    display:inline-block !important;
+    width:max-content !important;
     font-size:20px !important;
     line-height:1 !important;
     letter-spacing:-.02em !important;
