@@ -1292,3 +1292,125 @@ h3 {
         padding-top:8px !important;
     }
 }
+
+
+/* =========================================================
+   UNIVERSAL FINAL POLISH v7
+   Fixes: logo corners, true KloudSky color split,
+   footer brand overlap, section heading alignment.
+   ========================================================= */
+
+/* Logo: subtle rounded corners in header + footer */
+.nav .kloudsky-logo,
+.footer .kloudsky-logo,
+.footer .footer-grid .kloudsky-logo{
+    border-radius:9px !important;
+    overflow:hidden !important;
+}
+
+/* KloudSky: keep the real text together; only colors differ.
+   No pseudo-elements and therefore no spacing/overlap. */
+.nav .brand-name,
+.footer .brand-name,
+.footer .footer-grid .brand-name{
+    display:block !important;
+    font-size:20px !important;
+    line-height:1 !important;
+    letter-spacing:-.02em !important;
+    white-space:nowrap !important;
+    color:transparent !important;
+    background:linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 54%,
+        #66c4ff 54%,
+        #66c4ff 100%
+    ) !important;
+    -webkit-background-clip:text !important;
+    background-clip:text !important;
+}
+
+/* Completely disable the previous pseudo-element approach. */
+.nav .brand-name::before,
+.nav .brand-name::after,
+.footer .brand-name::before,
+.footer .brand-name::after,
+.footer .footer-grid .brand-name::before,
+.footer .footer-grid .brand-name::after{
+    content:none !important;
+    display:none !important;
+}
+
+/* Restore natural brand-text height so subtitle and description
+   never overlap in the footer. */
+.nav .brand-text,
+.footer .brand-text,
+.footer .footer-grid .brand-text{
+    height:auto !important;
+    min-height:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+}
+
+.footer .footer-grid .brand{
+    height:auto !important;
+    min-height:48px !important;
+    align-items:center !important;
+}
+
+.footer .footer-grid .brand-subtitle{
+    display:block !important;
+    margin-top:4px !important;
+    line-height:1.05 !important;
+}
+
+/* Footer description starts only after the complete brand block. */
+.footer .footer-grid > div:first-child .desc{
+    display:block !important;
+    margin-top:12px !important;
+    margin-bottom:0 !important;
+    line-height:1.45 !important;
+}
+
+/* Section title + supporting paragraph:
+   align them from the same top line instead of dropping the
+   paragraph down to the bottom of a two-line heading. */
+.section-head{
+    align-items:flex-start !important;
+}
+
+/* Keep heading/paragraph line-height tight and consistent. */
+.section-head h2,
+.section-head h1{
+    line-height:1.08 !important;
+    margin-top:0 !important;
+}
+
+.section-head p{
+    margin-top:4px !important;
+    line-height:1.5 !important;
+}
+
+/* Mobile brand sizing */
+@media(max-width:620px){
+    .nav .brand-name,
+    .footer .brand-name,
+    .footer .footer-grid .brand-name{
+        font-size:18px !important;
+    }
+
+    .nav .brand-text,
+    .footer .brand-text,
+    .footer .footer-grid .brand-text{
+        height:auto !important;
+    }
+
+    .footer .footer-grid .brand{
+        height:auto !important;
+    }
+
+    .footer .footer-grid > div:first-child .desc{
+        margin-top:10px !important;
+    }
+}
