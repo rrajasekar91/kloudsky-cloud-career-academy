@@ -1016,79 +1016,185 @@ h3 {
     max-width:100%;
 }
 
+/* =========================================================
+   KloudSky V2 - Global typography & spacing refinement
+   Purpose: tighter, cleaner vertical rhythm across all pages.
+   ========================================================= */
 
-/* Footer contact and social links */
-.footer-contact{
-    margin-top:26px;
-    padding:22px 0 20px;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-.footer-contact-title{
-    margin-bottom:14px;
-    color:#f4f8fc;
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-}
-.footer-contact-items{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:12px 24px;
-}
-.footer-contact-item{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    color:#b9cadb;
-    font-size:14px;
-    text-decoration:none;
-}
-.footer-contact-item:hover{
-    color:#66c4ff;
-}
-.footer-contact-icon{
-    color:#66c4ff;
+body{
+    line-height:1.55;
     font-size:16px;
-    line-height:1;
 }
-.footer-socials{
-    display:flex;
+
+h1,h2,h3{
+    line-height:1.08;
+    margin:0 0 12px;
+    font-weight:800;
+}
+
+h1{
+    letter-spacing:-.038em;
+}
+
+h2{
+    letter-spacing:-.032em;
+}
+
+h3{
+    font-size:22px;
+    letter-spacing:-.025em;
+}
+
+.lead{
+    font-size:18px;
+    line-height:1.48;
+}
+
+.section{
+    padding:48px 0;
+}
+
+.section-head{
     align-items:center;
-    gap:10px;
-    margin-left:auto;
+    gap:32px;
+    margin-bottom:20px;
 }
-.footer-social{
-    width:34px;
-    height:34px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:9px;
-    background:rgba(255,255,255,.035);
-    color:#c9d8e7;
-    transition:.2s ease;
+
+.section-head > div{
+    flex:0 1 58%;
+    min-width:0;
 }
-.footer-social:hover{
-    color:#fff;
-    border-color:rgba(102,196,255,.5);
-    background:rgba(53,167,255,.12);
-    transform:translateY(-1px);
+
+.section-head > p{
+    flex:0 1 42%;
+    line-height:1.48;
 }
-.footer-social svg{
-    width:17px;
-    height:17px;
-    display:block;
+
+.card{
+    padding:20px;
 }
+
+.card p{
+    line-height:1.52;
+}
+
+.grid3,.grid2{
+    gap:16px;
+}
+
+.steps{
+    gap:12px;
+}
+
+.step{
+    padding:20px;
+}
+
+.step h3{
+    margin-bottom:8px;
+}
+
+.step p{
+    line-height:1.48;
+}
+
+.page-hero{
+    padding:46px 0 34px;
+}
+
+.page-hero h1{
+    line-height:1.08;
+    margin-bottom:12px;
+}
+
+.page-hero p{
+    font-size:17px;
+    line-height:1.48;
+}
+
+.program-layout{
+    gap:20px;
+}
+
+.timeline{
+    gap:12px;
+}
+
+.timeline-item{
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+.timeline-item h3{
+    margin-bottom:6px;
+}
+
+.timeline-item p{
+    line-height:1.48;
+}
+
+.checklist{
+    gap:8px;
+    margin-top:16px;
+}
+
+.check{
+    padding:10px 12px;
+    line-height:1.4;
+}
+
+.form{
+    gap:12px;
+}
+
+.field{
+    gap:6px;
+}
+
+.cta{
+    padding:38px;
+}
+
+.cta p{
+    line-height:1.5;
+}
+
+.empty-reviews{
+    padding:30px;
+}
+
+.footer{
+    padding:38px 0 22px;
+}
+
+.footer-bottom{
+    margin-top:22px;
+    padding-top:16px;
+}
+
 @media(max-width:620px){
-    .footer-contact-items{
-        align-items:flex-start;
-        flex-direction:column;
-        gap:12px;
+    .section{
+        padding:42px 0;
     }
-    .footer-socials{
-        margin-left:0;
+
+    .section-head{
+        margin-bottom:18px;
+    }
+
+    .section-head > div,
+    .section-head > p{
+        max-width:none;
+    }
+
+    .page-hero{
+        padding:40px 0 28px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .cta{
+        padding:28px;
     }
 }
