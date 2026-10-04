@@ -1016,185 +1016,249 @@ h3 {
     max-width:100%;
 }
 
+
+/* Footer contact and social links */
+.footer-contact{
+    margin-top:26px;
+    padding:22px 0 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+.footer-contact-title{
+    margin-bottom:14px;
+    color:#f4f8fc;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+.footer-contact-items{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px 24px;
+}
+.footer-contact-item{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#b9cadb;
+    font-size:14px;
+    text-decoration:none;
+}
+.footer-contact-item:hover{
+    color:#66c4ff;
+}
+.footer-contact-icon{
+    color:#66c4ff;
+    font-size:16px;
+    line-height:1;
+}
+.footer-socials{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-left:auto;
+}
+.footer-social{
+    width:34px;
+    height:34px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:9px;
+    background:rgba(255,255,255,.035);
+    color:#c9d8e7;
+    transition:.2s ease;
+}
+.footer-social:hover{
+    color:#fff;
+    border-color:rgba(102,196,255,.5);
+    background:rgba(53,167,255,.12);
+    transform:translateY(-1px);
+}
+.footer-social svg{
+    width:17px;
+    height:17px;
+    display:block;
+}
+@media(max-width:620px){
+    .footer-contact-items{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:12px;
+    }
+    .footer-socials{
+        margin-left:0;
+    }
+}
+
+
 /* =========================================================
-   KloudSky V2 - Global typography & spacing refinement
-   Purpose: tighter, cleaner vertical rhythm across all pages.
+   UNIVERSAL HEADER + FOOTER POLISH — v5
+   Applies consistently across all KloudSky Academy pages.
+   Visual-only correction: no page content or functionality changed.
    ========================================================= */
 
-body{
-    line-height:1.55;
-    font-size:16px;
+/* ---------- Header: reduce unused vertical space ---------- */
+.nav-inner{
+    min-height:68px !important;
+    gap:22px !important;
 }
 
-h1,h2,h3{
-    line-height:1.08;
-    margin:0 0 12px;
-    font-weight:800;
+.nav .kloudsky-logo{
+    width:50px !important;
+    height:50px !important;
+    border-radius:10px !important;
 }
 
-h1{
-    letter-spacing:-.038em;
+.nav .brand{
+    gap:11px !important;
 }
 
-h2{
-    letter-spacing:-.032em;
+/* Keep the existing brand typography, but split the word visually:
+   Kloud = white, Sky = light blue. The HTML remains "KloudSky". */
+.nav .brand-name{
+    font-size:20px !important;
+    line-height:1.05 !important;
+    color:transparent !important;
+    white-space:nowrap;
 }
 
-h3{
-    font-size:22px;
-    letter-spacing:-.025em;
+.nav .brand-name::before{
+    content:"Kloud";
+    color:#ffffff;
 }
 
-.lead{
-    font-size:18px;
-    line-height:1.48;
+.nav .brand-name::after{
+    content:"Sky";
+    color:#66c4ff;
 }
 
-.section{
-    padding:48px 0;
+.nav .brand-subtitle{
+    margin-top:4px !important;
+    color:#66c4ff !important;
+    line-height:1.1 !important;
 }
 
-.section-head{
-    align-items:center;
-    gap:32px;
-    margin-bottom:20px;
+.nav .nav-links a{
+    padding-top:8px !important;
+    padding-bottom:8px !important;
 }
 
-.section-head > div{
-    flex:0 1 58%;
+/* ---------- Footer: compact the unused vertical area ---------- */
+.footer{
+    padding-top:32px !important;
+    padding-bottom:16px !important;
+}
+
+.footer .footer-grid{
+    gap:28px !important;
+}
+
+.footer .footer-grid > div{
     min-width:0;
 }
 
-.section-head > p{
-    flex:0 1 42%;
-    line-height:1.48;
+.footer .footer-grid .brand{
+    gap:11px !important;
 }
 
-.card{
-    padding:20px;
+.footer .footer-grid .kloudsky-logo{
+    width:50px !important;
+    height:50px !important;
+    border-radius:10px !important;
 }
 
-.card p{
-    line-height:1.52;
+.footer .footer-grid .brand-name{
+    font-size:20px !important;
+    line-height:1.05 !important;
+    color:transparent !important;
+    white-space:nowrap;
 }
 
-.grid3,.grid2{
-    gap:16px;
+.footer .footer-grid .brand-name::before{
+    content:"Kloud";
+    color:#ffffff;
 }
 
-.steps{
-    gap:12px;
+.footer .footer-grid .brand-name::after{
+    content:"Sky";
+    color:#66c4ff;
 }
 
-.step{
-    padding:20px;
+.footer .footer-grid .brand-subtitle{
+    margin-top:4px !important;
+    color:#66c4ff !important;
+    line-height:1.1 !important;
 }
 
-.step h3{
-    margin-bottom:8px;
+/* Compact divider/copyright/social row */
+.footer .footer-bottom{
+    margin-top:18px !important;
+    padding-top:12px !important;
+    padding-bottom:0 !important;
+    min-height:0 !important;
+    gap:14px !important;
 }
 
-.step p{
-    line-height:1.48;
+.footer .footer-socials-bottom{
+    gap:8px !important;
 }
 
-.page-hero{
-    padding:46px 0 34px;
+.footer .footer-social{
+    width:36px !important;
+    height:36px !important;
+    border-radius:9px !important;
 }
 
-.page-hero h1{
-    line-height:1.08;
-    margin-bottom:12px;
+/* If the page uses the alternate footer-contact/social structure,
+   compact that version as well. */
+.footer .footer-contact{
+    margin-top:18px !important;
+    padding-top:14px !important;
+    padding-bottom:10px !important;
 }
 
-.page-hero p{
-    font-size:17px;
-    line-height:1.48;
+.footer .footer-contact-items{
+    gap:10px 20px !important;
 }
 
-.program-layout{
-    gap:20px;
+.footer .footer-socials{
+    gap:8px !important;
 }
 
-.timeline{
-    gap:12px;
-}
-
-.timeline-item{
-    padding-top:2px;
-    padding-bottom:2px;
-}
-
-.timeline-item h3{
-    margin-bottom:6px;
-}
-
-.timeline-item p{
-    line-height:1.48;
-}
-
-.checklist{
-    gap:8px;
-    margin-top:16px;
-}
-
-.check{
-    padding:10px 12px;
-    line-height:1.4;
-}
-
-.form{
-    gap:12px;
-}
-
-.field{
-    gap:6px;
-}
-
-.cta{
-    padding:38px;
-}
-
-.cta p{
-    line-height:1.5;
-}
-
-.empty-reviews{
-    padding:30px;
-}
-
-.footer{
-    padding:38px 0 22px;
-}
-
-.footer-bottom{
-    margin-top:22px;
-    padding-top:16px;
-}
-
+/* ---------- Mobile ---------- */
 @media(max-width:620px){
-    .section{
-        padding:42px 0;
+    .nav-inner{
+        min-height:62px !important;
     }
 
-    .section-head{
-        margin-bottom:18px;
+    .nav .kloudsky-logo,
+    .footer .footer-grid .kloudsky-logo{
+        width:46px !important;
+        height:46px !important;
+        border-radius:9px !important;
     }
 
-    .section-head > div,
-    .section-head > p{
-        max-width:none;
+    .nav .brand-name,
+    .footer .footer-grid .brand-name{
+        font-size:18px !important;
     }
 
-    .page-hero{
-        padding:40px 0 28px;
+    .nav .brand-subtitle,
+    .footer .footer-grid .brand-subtitle{
+        font-size:9px !important;
+        margin-top:3px !important;
     }
 
-    .card{
-        padding:18px;
+    .footer{
+        padding-top:26px !important;
+        padding-bottom:14px !important;
     }
 
-    .cta{
-        padding:28px;
+    .footer .footer-bottom{
+        margin-top:14px !important;
+        padding-top:10px !important;
     }
 }
